@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5f9daaeaed1445c6b1c1a8439f473ef5" Name="Diagram1" ZoomLevel="73">
+        <EntityTypeShape EntityType="FZLModel.DSPEC" Width="1.5" PointX="18.75" PointY="1.25" />
+        <EntityTypeShape EntityType="FZLModel.DSPECP" Width="1.5" PointX="21" PointY="3.625" />
+        <EntityTypeShape EntityType="FZLModel.FIRMA" Width="1.5" PointX="9" PointY="29.875" />
+        <EntityTypeShape EntityType="FZLModel.GS1_CONFIG" Width="1.5" PointX="8.75" PointY="10.75" />
+        <EntityTypeShape EntityType="FZLModel.GS1_KODY" Width="1.5" PointX="15.75" PointY="33.875" />
+        <EntityTypeShape EntityType="FZLModel.HMMG" Width="1.5" PointX="16.75" PointY="13.375" />
+        <EntityTypeShape EntityType="FZLModel.HMMZ" Width="1.5" PointX="19" PointY="14.5" />
+        <EntityTypeShape EntityType="FZLModel.KH" Width="1.5" PointX="0.75" PointY="28.75" />
+        <EntityTypeShape EntityType="FZLModel.KONTRAKT" Width="1.5" PointX="0.75" PointY="79.125" />
+        <EntityTypeShape EntityType="FZLModel.KONTRAKT_PARAM" Width="1.5" PointX="3" PointY="80.125" />
+        <EntityTypeShape EntityType="FZLModel.KONTRAKT_UMOWY" Width="1.5" PointX="3" PointY="2.875" />
+        <EntityTypeShape EntityType="FZLModel.KONTRAKT_UMOWY_WART_PARAM" Width="1.5" PointX="5.25" PointY="6.125" />
+        <EntityTypeShape EntityType="FZLModel.MAGAZYNY" Width="1.5" PointX="11.25" PointY="65.125" />
+        <EntityTypeShape EntityType="FZLModel.MG" Width="1.5" PointX="5.25" PointY="52.5" />
+        <EntityTypeShape EntityType="FZLModel.MG_HM" Width="1.5" PointX="13.75" PointY="1.375" />
+        <EntityTypeShape EntityType="FZLModel.MG_PARAMETRY" Width="1.5" PointX="11.25" PointY="69.75" />
+        <EntityTypeShape EntityType="FZLModel.MG_PARAMETRY_WART" Width="1.5" PointX="13.5" PointY="56.5" />
+        <EntityTypeShape EntityType="FZLModel.MG_POWIAZANIA" Width="1.5" PointX="12.75" PointY="61" />
+        <EntityTypeShape EntityType="FZLModel.MG_POZYCJE" Width="1.5" PointX="10.5" PointY="55.875" />
+        <EntityTypeShape EntityType="FZLModel.MG_RODZAJE" Width="1.5" PointX="3" PointY="74.75" />
+        <EntityTypeShape EntityType="FZLModel.MG_STANY" Width="1.5" PointX="3" PointY="54.25" />
+        <EntityTypeShape EntityType="FZLModel.MG_WG" Width="1.5" PointX="3" PointY="57.75" />
+        <EntityTypeShape EntityType="FZLModel.MG_WG_POWIAZANIA" Width="1.5" PointX="7.5" PointY="53.875" />
+        <EntityTypeShape EntityType="FZLModel.MG_WG_POZYCJE" Width="1.5" PointX="5.25" PointY="45.125" />
+        <EntityTypeShape EntityType="FZLModel.MG_WG_POZYCJE_OPAKOWANIA" Width="1.5" PointX="13.5" PointY="46.125" />
+        <EntityTypeShape EntityType="FZLModel.MG_WG_STANY" Width="1.5" PointX="5.25" PointY="96.25" />
+        <EntityTypeShape EntityType="FZLModel.MZ_HM" Width="1.5" PointX="16" PointY="3.125" />
+        <EntityTypeShape EntityType="FZLModel.OPAKOWANIA" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="FZLModel.OPAKOWANIA_FK" Width="1.5" PointX="13.5" PointY="32.5" />
+        <EntityTypeShape EntityType="FZLModel.OPAKOWANIA_RODZAJE" Width="1.5" PointX="11.25" PointY="35.5" />
+        <EntityTypeShape EntityType="FZLModel.OWSBZ" Width="1.5" PointX="7.5" PointY="74.5" />
+        <EntityTypeShape EntityType="FZLModel.OWSBZ_SCHEM" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="FZLModel.PARTIE" Width="1.5" PointX="3" PointY="46.875" />
+        <EntityTypeShape EntityType="FZLModel.PARTIE_2" Width="1.5" PointX="5.25" PointY="40.5" />
+        <EntityTypeShape EntityType="FZLModel.PARTIE_ATESTY" Width="1.5" PointX="11.25" PointY="40.25" />
+        <EntityTypeShape EntityType="FZLModel.PARTIE_ATESTY_PARAM" Width="1.5" PointX="14.25" PointY="51.875" />
+        <EntityTypeShape EntityType="FZLModel.PARTIE_ATESTY_WART" Width="1.5" PointX="16.5" PointY="45.375" />
+        <EntityTypeShape EntityType="FZLModel.PARTIE_DOSTAWCY" Width="1.5" PointX="8.25" PointY="48" />
+        <EntityTypeShape EntityType="FZLModel.PARTIE_FK" Width="1.5" PointX="7.5" PointY="58.25" />
+        <EntityTypeShape EntityType="FZLModel.PLACE" Width="1.5" PointX="7.75" PointY="6" />
+        <EntityTypeShape EntityType="FZLModel.PLACE_PRACOWNICY" Width="1.5" PointX="10" PointY="6.25" />
+        <EntityTypeShape EntityType="FZLModel.PRACOWNICY" Width="1.5" PointX="7.75" PointY="87.625" />
+        <EntityTypeShape EntityType="FZLModel.PROD" Width="1.5" PointX="3.75" PointY="23.375" />
+        <EntityTypeShape EntityType="FZLModel.PROD_HMDW" Width="1.5" PointX="6" PointY="65.5" />
+        <EntityTypeShape EntityType="FZLModel.PROD_HMTW" Width="1.5" PointX="11.25" PointY="28.5" />
+        <EntityTypeShape EntityType="FZLModel.PROD_LINIE" Width="1.5" PointX="7.5" PointY="15.375" />
+        <EntityTypeShape EntityType="FZLModel.PROD_LINIE_MASZYNY" Width="1.5" PointX="12.75" PointY="17.875" />
+        <EntityTypeShape EntityType="FZLModel.PROD_LINIE_PARAM" Width="1.5" PointX="9.75" PointY="15.75" />
+        <EntityTypeShape EntityType="FZLModel.PROD_LINIE_PARAM_WART" Width="1.5" PointX="12" PointY="24.75" />
+        <EntityTypeShape EntityType="FZLModel.PROD_LINIE_PW" Width="1.5" PointX="14" PointY="28.375" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MAGAZYN" Width="1.5" PointX="11.75" PointY="14.75" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MAGAZYNY" Width="1.5" PointX="13.75" PointY="14.75" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MASZYNY" Width="1.5" PointX="3.75" PointY="17.375" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MASZYNY_KOSZTY" Width="1.5" PointX="14.25" PointY="22.875" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MASZYNY_MONIT" Width="1.5" PointX="9" PointY="23.125" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MASZYNY_PARAM" Width="1.5" PointX="3.75" PointY="13.25" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MASZYNY_PARAM_DEF" Width="1.5" PointX="6" PointY="2.875" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MASZYNY_PARAM_WART" Width="1.5" PointX="6" PointY="24.5" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MASZYNY_PW" Width="1.5" PointX="6" PointY="20.375" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MASZYNY_ZL" Width="1.5" PointX="6" PointY="12.125" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MG" Width="1.5" PointX="1.5" PointY="66.125" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MGDW" Width="1.5" PointX="6" PointY="34.125" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MGPW" Width="1.5" PointX="16.25" PointY="55.375" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MZ" Width="1.5" PointX="3.75" PointY="65.25" />
+        <EntityTypeShape EntityType="FZLModel.PROD_PRODMGPW" Width="1.5" PointX="15.75" PointY="39.75" />
+        <EntityTypeShape EntityType="FZLModel.PROD_PW" Width="1.5" PointX="18.5" PointY="40.5" />
+        <EntityTypeShape EntityType="FZLModel.PROD_TYPDK" Width="1.5" PointX="0.75" PointY="18.75" />
+        <EntityTypeShape EntityType="FZLModel.PROD_ZL" Width="1.5" PointX="6" PointY="77.875" />
+        <EntityTypeShape EntityType="FZLModel.PRODCONF" Width="1.5" PointX="18.75" PointY="10.75" />
+        <EntityTypeShape EntityType="FZLModel.PRODDK" Width="1.5" PointX="6" PointY="28.375" />
+        <EntityTypeShape EntityType="FZLModel.PRODDP" Width="1.5" PointX="8.25" PointY="36" />
+        <EntityTypeShape EntityType="FZLModel.PRODDP_FK" Width="1.5" PointX="11.25" PointY="45.625" />
+        <EntityTypeShape EntityType="FZLModel.PRODDP_MONIT" Width="1.5" PointX="13.5" PointY="37.75" />
+        <EntityTypeShape EntityType="FZLModel.PRODPARAM" Width="1.5" PointX="9.75" PointY="19.75" />
+        <EntityTypeShape EntityType="FZLModel.PRODPARAM_GRUPY" Width="1.5" PointX="20.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FZLModel.PRODPARAM_WART" Width="1.5" PointX="12" PointY="21.75" />
+        <EntityTypeShape EntityType="FZLModel.SUROWCE" Width="1.5" PointX="3" PointY="37.75" />
+        <EntityTypeShape EntityType="FZLModel.SUROWCE_TW" Width="1.5" PointX="0.75" PointY="47.625" />
+        <EntityTypeShape EntityType="FZLModel.TW" Width="1.5" PointX="0.75" PointY="43" />
+        <EntityTypeShape EntityType="FZLModel.UZYTKOWNICY" Width="1.5" PointX="8.75" PointY="1" />
+        <EntityTypeShape EntityType="FZLModel.UZYTKOWNICY_LOG" Width="1.5" PointX="20.75" PointY="7.75" />
+        <EntityTypeShape EntityType="FZLModel.UZYTKOWNICY_UPRAWNIENIA" Width="1.5" PointX="11" PointY="1.25" />
+        <EntityTypeShape EntityType="FZLModel.WALUTY" Width="1.5" PointX="20.75" PointY="11.75" />
+        <AssociationConnector Association="FZLModel.FK_id_dspec" />
+        <AssociationConnector Association="FZLModel.FK_MG_FIRMA" />
+        <AssociationConnector Association="FZLModel.FK_PARTIE_ATESTY_FIRMA" />
+        <AssociationConnector Association="FZLModel.FK_GS1_KODY_PRODDP_MONIT" />
+        <AssociationConnector Association="FZLModel.FK_HMMZ_HMMG" />
+        <AssociationConnector Association="FZLModel.FK_KONTRAKT_UMOWY_KH" />
+        <AssociationConnector Association="FZLModel.FK_MG_WG_MG_WG" />
+        <AssociationConnector Association="FZLModel.FK_PARTIE_DOSTAWCY_KH" />
+        <AssociationConnector Association="FZLModel.FK_SUROWCE_KH" />
+        <AssociationConnector Association="FZLModel.FK_KONTRAKT_PARAM_KONTRAKT" />
+        <AssociationConnector Association="FZLModel.FK_KONTRAKT_UMOWY_WART_PARAM_KONTRAKT_PARAM" />
+        <AssociationConnector Association="FZLModel.FK_KONTRAKT_UMOWY_KONTRAKT_UMOWY" />
+        <AssociationConnector Association="FZLModel.FK_KONTRAKT_UMOWY_WART_PARAM_KONTRAKT_UMOWY" />
+        <AssociationConnector Association="FZLModel.FK_MG_WG_POZYCJE_OPAKOWANIA_MAGAZYNY" />
+        <AssociationConnector Association="FZLModel.FK_PRODDP_MONIT_MAGAZYNY" />
+        <AssociationConnector Association="FZLModel.FK_MG_MG" />
+        <AssociationConnector Association="FZLModel.FK_MG_MG_RODZAJE" />
+        <AssociationConnector Association="FZLModel.FK_MG_PARAMETRY_WART_MG" />
+        <AssociationConnector Association="FZLModel.FK_MG_PARTIE" />
+        <AssociationConnector Association="FZLModel.FK_MG_POZYCJE_MG_POZYCJE" />
+        <AssociationConnector Association="FZLModel.FK_OWSBZ_MG" />
+        <AssociationConnector Association="FZLModel.FK_PARTIE_FK_MG" />
+        <AssociationConnector Association="FZLModel.FK_MZ_HM_MG_HM" />
+        <AssociationConnector Association="FZLModel.FK_MG_PARAMETRY_WART_MG_PARAMETRY" />
+        <AssociationConnector Association="FZLModel.FK_MG_POWIAZANIA_MG_POZYCJE" />
+        <AssociationConnector Association="FZLModel.FK_MG_POZYCJE_PARTIE" />
+        <AssociationConnector Association="FZLModel.FK_MG_STANY_TW" />
+        <AssociationConnector Association="FZLModel.FK_MG_WG_POZYCJE_MG_WG" />
+        <AssociationConnector Association="FZLModel.FK_MG_WG_POWIAZANIA_MG_POZYCJE" />
+        <AssociationConnector Association="FZLModel.FK_MG_WG_POZYCJE_OPAKOWANIA_MG_WG_POZYCJE" />
+        <AssociationConnector Association="FZLModel.FK_MG_WG_POZYCJE_PARTIE" />
+        <AssociationConnector Association="FZLModel.FK_MG_WG_POZYCJE_TW" />
+        <AssociationConnector Association="FZLModel.FK_MG_WG_POZYCJE_OPAKOWANIA_MG_WG_POZYCJE_OPAKOWANIA" />
+        <AssociationConnector Association="FZLModel.FK_MG_WG_POZYCJE_OPAKOWANIA_OPAKOWANIA_RODZAJE" />
+        <AssociationConnector Association="FZLModel.FK_MG_WG_STANY_TW" />
+        <AssociationConnector Association="FZLModel.FK_OPAKOWANIA_FK_OPAKOWANIA_RODZAJE" />
+        <AssociationConnector Association="FZLModel.FK_PROD_HMTW_OPAKOWANIA_RODZAJE" />
+        <AssociationConnector Association="FZLModel.FK_PRODDP_MONIT_OPAKOWANIA_RODZAJE" />
+        <AssociationConnector Association="FZLModel.FK_PRODDP_MONIT_OPAKOWANIA_RODZAJE1" />
+        <AssociationConnector Association="FZLModel.FK_PARTIE_2_PARTIE" />
+        <AssociationConnector Association="FZLModel.FK_PARTIE_ATESTY_PARTIE" />
+        <AssociationConnector Association="FZLModel.FK_PARTIE_ATESTY_WART_PARTIE" />
+        <AssociationConnector Association="FZLModel.FK_PARTIE_DOSTAWCY_PARTIE" />
+        <AssociationConnector Association="FZLModel.FK_PARTIE_FK_PARTIE" />
+        <AssociationConnector Association="FZLModel.FK_PARTIE_TW" />
+        <AssociationConnector Association="FZLModel.FK_PRODDP_FK_PARTIE" />
+        <AssociationConnector Association="FZLModel.FK_PRODDP_PARTIE" />
+        <AssociationConnector Association="FZLModel.FK_PARTIE_2_TW" />
+        <AssociationConnector Association="FZLModel.FK_PARTIE_ATESTY_TW" />
+        <AssociationConnector Association="FZLModel.FK_PARTIE_ATESTY_WART_PARTIE_ATESTY" />
+        <AssociationConnector Association="FZLModel.FK_PARTIE_ATESTY_WART_PARTIE_ATESTY_PARAM" />
+        <AssociationConnector Association="FZLModel.FK_PLACE_PRACOWNICY_PLACE" />
+        <AssociationConnector Association="FZLModel.FK_PLACE_PRACOWNICY_PRACOWNICY" />
+        <AssociationConnector Association="FZLModel.FK_PROD_LINIE_PARAM_WART_PROD" />
+        <AssociationConnector Association="FZLModel.FK_PROD_LINIE_PW_PROD" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MASZYNY_MONIT_PROD" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MASZYNY_PARAM_WART_PROD" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MASZYNY_PW_PROD" />
+        <AssociationConnector Association="FZLModel.FK_PROD_PW_PROD" />
+        <AssociationConnector Association="FZLModel.FK_PROD_ZL_PROD" />
+        <AssociationConnector Association="FZLModel.FK_PROD_ZL_PROD1" />
+        <AssociationConnector Association="FZLModel.FK_PRODDK_PROD" />
+        <AssociationConnector Association="FZLModel.FK_PRODPARAM_WART_PROD" />
+        <AssociationConnector Association="FZLModel.FK_PROD_HMDW_PROD_MZ" />
+        <AssociationConnector Association="FZLModel.FK_PROD_PW_PROD_HMDW" />
+        <AssociationConnector Association="FZLModel.FK_PRODDP_FK_PROD_HMDW" />
+        <AssociationConnector Association="FZLModel.FK_PRODDP_PROD_HMDW" />
+        <AssociationConnector Association="FZLModel.FK_PRODDP_MONIT_PROD_HMTW" />
+        <AssociationConnector Association="FZLModel.FK_PROD_LINIE_MASZYNY_PROD_LINIE" />
+        <AssociationConnector Association="FZLModel.FK_PROD_LINIE_PARAM_PROD_LINIE" />
+        <AssociationConnector Association="FZLModel.FK_PROD_LINIE_PW_PROD_LINIE" />
+        <AssociationConnector Association="FZLModel.FK_PROD_LINIE_MASZYNY_PROD_MASZYNY" />
+        <AssociationConnector Association="FZLModel.FK_PROD_LINIE_PARAM_WART_PROD_LINIE_PARAM" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MASZYNY_PARAM_PROD_MASZYNY_PARAM" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MASZYNY_PW_PROD_MASZYNY" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MASZYNY_ZL_PROD_MASZYNY" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MASZYNY_ZL_PROD_MASZYNY1" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MASZYNY_KOSZTY_PROD_MASZYNY_MONIT" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MASZYNY_KOSZTY_PROD_MASZYNY_PW" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MASZYNY_MONIT_PROD_MASZYNY_PW" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MASZYNY_PARAM_DEF_PROD_MASZYNY_PARAM" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MASZYNY_PARAM_WART_PROD_MASZYNY_PARAM" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MASZYNY_PARAM_WART_PROD_MASZYNY_PW" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MZ_PROD_MG" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MGDW_PROD_MZ" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MGPW_PROD_MGDW" />
+        <AssociationConnector Association="FZLModel.FK_PROD_PRODMGPW_PROD_MGDW" />
+        <AssociationConnector Association="FZLModel.FK_PRODDP_PROD_MGDW" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MGPW_PROD_MZ" />
+        <AssociationConnector Association="FZLModel.FK_PROD_PRODMGPW_PROD_MZ" />
+        <AssociationConnector Association="FZLModel.FK_PROD_PRODMGPW_PRODDP" />
+        <AssociationConnector Association="FZLModel.FK_PROD_PRODMGPW_PRODDP_MONIT" />
+        <AssociationConnector Association="FZLModel.FK_PROD_PW_PRODDP" />
+        <AssociationConnector Association="FZLModel.FK_PROD_PW_PRODDP_FK" />
+        <AssociationConnector Association="FZLModel.FK_PRODDP_FK_PRODDK" />
+        <AssociationConnector Association="FZLModel.FK_PRODDP_PRODDK" />
+        <AssociationConnector Association="FZLModel.FK_PRODDP_MONIT_PRODDP" />
+        <AssociationConnector Association="FZLModel.FK_PRODDP_MONIT_PRODDP_MONIT" />
+        <AssociationConnector Association="FZLModel.FK_PRODPARAM_WART_PRODPARAM" />
+        <AssociationConnector Association="FZLModel.FK_SUROWCE_SUROWCE_TW" />
+        <AssociationConnector Association="FZLModel.FK_SUROWCE_TW" />
+        <AssociationConnector Association="FZLModel.FK_UZYTKOWNICY_UPRAWNIENIA_UZYTKOWNICY" />
+        <EntityTypeShape EntityType="FZLModel.PRODDP_SYM" Width="1.5" PointX="21.375" PointY="14.75" />
+        <EntityTypeShape EntityType="FZLModel.PARTIE_SYM" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="FZLModel.PROD_MZ_SPEC" Width="1.5" PointX="18.75" PointY="51.125" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MZ_SPEC_MAGAZYNY" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MZ_SPEC_OPAKOWANIA_RODZAJE" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MZ_SPEC_OPAKOWANIA_RODZAJE1" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MZ_SPEC_PROD_MZ" />
+        <AssociationConnector Association="FZLModel.FK_PROD_MZ_SPEC_PRODDP_MONIT" />
+        <EntityTypeShape EntityType="FZLModel.WZ_SPECYFIKACJE" Width="1.5" PointX="23.375" PointY="1.25" />
+        <EntityTypeShape EntityType="FZLModel.WZ_SPECYFIKACJE_OPAKOWANIA" Width="1.5" PointX="27.875" PointY="19.25" />
+        <EntityTypeShape EntityType="FZLModel.WZ_SPECYFIKACJE_TOWARY" Width="1.5" PointX="25.625" PointY="3.125" />
+        <AssociationConnector Association="FZLModel.FK_WZ_SPECYFIKACJE_POZ_OPAKOWANIA_RODZAJE" />
+        <AssociationConnector Association="FZLModel.FK_WZ_SPECYFIKACJE_TOWARY_WZ_SPECYFIKACJE" />
+        <AssociationConnector Association="FZLModel.FK_WZ_SPECYFIKACJE_OPAKOWANIA_WZ_SPECYFIKACJE_TOWARY" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

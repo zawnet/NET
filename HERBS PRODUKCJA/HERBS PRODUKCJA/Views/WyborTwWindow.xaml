@@ -1,0 +1,13 @@
+﻿<Window x:Class="HERBS_PRODUKCJA.Views.WyborTwWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HERBS_PRODUKCJA.Views"
+        mc:Ignorable="d"
+        Title="Wybór towarów" Height="631.637" Width="782.663"
+        xmlns:View="clr-namespace:HERBS_PRODUKCJA.Views" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,0">
+        <View:WyborTwView Margin="10,10,0,0" HorizontalAlignment="Left" Width="732" Height="564" VerticalAlignment="Top" />
+    </Grid>
+</Window>

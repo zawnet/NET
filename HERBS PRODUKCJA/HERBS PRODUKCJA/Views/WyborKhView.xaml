@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="HERBS_PRODUKCJA.Views.WyborKhView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HERBS_PRODUKCJA.Views"
+             mc:Ignorable="d" Width="731.538" Height="377.923"
+              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             >
+    <Grid>
+        <Button x:Name="button" Content="Wybierz" Margin="0,3,6,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Command="{Binding WybierzCommand}"/>
+
+
+
+        <TextBox  x:Name="txtSSNoFilter"
+                                          Text="{Binding KHName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"                                       
+                                          HorizontalAlignment="Stretch" 
+                                          Margin="62,28,10,0" Background="Azure" Height="21" VerticalAlignment="Top">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="TextChanged">
+                    <i:InvokeCommandAction Command="{Binding Path=GetWorkOrderCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </TextBox>
+
+        <DataGrid AutoGenerateColumns="False"
+                	ItemsSource="{Binding ProdKHs}"
+                	HeadersVisibility="Column"
+                	SelectedItem="{Binding SelectedKH, Mode=TwoWay}"
+                	SelectionMode="Single"
+                	CanUserAddRows="False"
+                	CanUserDeleteRows="False" Margin="10,54,0,0" HorizontalAlignment="Left" Width="708" >
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Binding="{Binding IsSelected}" Width="50" >
+                    <DataGridCheckBoxColumn.HeaderTemplate>
+                        <DataTemplate x:Name="dtAllChkBx">
+                            <CheckBox x:Name="cbxAll" Content="All" IsChecked="{Binding DataContext.AllSelected, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                        </DataTemplate>
+                    </DataGridCheckBoxColumn.HeaderTemplate>
+                </DataGridCheckBoxColumn>
+                <DataGridTextColumn Binding="{Binding ProdukcjaKh.kod, Mode=TwoWay}"  Header="Kod" FontWeight="Bold" />
+                <DataGridTextColumn Binding="{Binding ProdukcjaKh.nazwa, Mode=TwoWay}"  Header="Nazwa" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

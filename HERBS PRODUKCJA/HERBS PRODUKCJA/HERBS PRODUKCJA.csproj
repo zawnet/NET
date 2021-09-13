@@ -1,0 +1,837 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EF07AB06-1363-46B9-B391-0EE03F0178F5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HERBS_PRODUKCJA</RootNamespace>
+    <AssemblyName>HERBS PRODUKCJA</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>production.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dotLinkControlsWpf">
+      <HintPath>..\..\..\Downloads\FastReportViewerWPFTestControls\TestControls\dotLinkControlsWpf\bin\Debug\dotLinkControlsWpf.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=2014.1.2.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL" />
+    <Reference Include="FsRichTextBox">
+      <HintPath>..\..\..\Downloads\SourceCode\FsRichTextBox\FsRichTextBox\bin\Release\FsRichTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Intellibox">
+      <HintPath>..\..\..\..\..\Downloads\Intellibox-1.3.0.0\Intellibox-1.3.0.0\bin\Intellibox.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.2.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.DataGrid, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.2.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="DataTemplates\ProdMaszynaParamDataTemplateSelector.cs" />
+    <Compile Include="Design\DesignDataService.cs" />
+    <Compile Include="DSPEC.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DSPECP.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FIRMA.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FZLDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FZLDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FzlModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FzlModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FzlModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FzlModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FzlModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="GS1_CONFIG.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GS1_KODY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\FilterDataGrid.cs" />
+    <Compile Include="Helpers\Functions.cs" />
+    <Compile Include="Helpers\HeaderFilterConverter.cs" />
+    <Compile Include="Helpers\Konwentery.cs" />
+    <Compile Include="Helpers\MagazynOperacje.cs" />
+    <Compile Include="Helpers\OpenWindowMessage.cs" />
+    <Compile Include="Helpers\ProdMGTyp.cs" />
+    <Compile Include="Helpers\WindowType.cs" />
+    <Compile Include="HMMG.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HMMZ.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KH.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KONTRAKT.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KONTRAKT_PARAM.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KONTRAKT_UMOWY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KONTRAKT_UMOWY_WART_PARAM.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAGAZYNY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Messages\CommandMessage.cs" />
+    <Compile Include="Messages\NavigateMessage.cs" />
+    <Compile Include="Messages\UserMessage.cs" />
+    <Compile Include="MG.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MG_HM.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MG_PARAMETRY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MG_PARAMETRY_WART.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MG_POWIAZANIA.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MG_POZYCJE.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MG_RODZAJE.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MG_STANY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MG_WG.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MG_WG_POWIAZANIA.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MG_WG_POZYCJE.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MG_WG_POZYCJE_OPAKOWANIA.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MG_WG_STANY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DataItem.cs" />
+    <Compile Include="Model\DataService.cs" />
+    <Compile Include="Model\IDataService.cs" />
+    <Compile Include="Commands\OrderViewCommands.cs" />
+    <Compile Include="MZ_HM.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPAKOWANIA.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPAKOWANIA_FK.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OPAKOWANIA_RODZAJE.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OWSBZ.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OWSBZ_SCHEM.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARTIE.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARTIE_2.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARTIE_ATESTY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARTIE_ATESTY_PARAM.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARTIE_ATESTY_WART.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARTIE_DOSTAWCY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARTIE_FK.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PARTIE_SYM.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PLACE.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PLACE_PRACOWNICY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRACOWNICY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODCONF.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODDK.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODDP.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODDP_FK.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODDP_MONIT.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODDP_SYM.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODPARAM.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODPARAM_GRUPY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRODPARAM_WART.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_HMDW.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_HMTW.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_LINIE.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_LINIE_MASZYNY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_LINIE_PARAM.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_LINIE_PARAM_WART.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_LINIE_PW.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MAGAZYN.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MAGAZYNY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MASZYNY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MASZYNY_KOSZTY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MASZYNY_MONIT.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MASZYNY_PARAM.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MASZYNY_PARAM_DEF.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MASZYNY_PARAM_WART.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MASZYNY_PW.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MASZYNY_ZL.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MG.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MGDW.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MGPW.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MZ.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_MZ_SPEC.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_PRODMGPW.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_PW.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_TYPDK.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PROD_ZL.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Support\CrudVMBase.cs" />
+    <Compile Include="Support\NotifyUIBase.cs" />
+    <Compile Include="Support\VMBase.cs" />
+    <Compile Include="SUROWCE.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SUROWCE_TW.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TW.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UZYTKOWNICY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UZYTKOWNICY_LOG.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UZYTKOWNICY_UPRAWNIENIA.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\PartieSYMViewModel.cs" />
+    <Compile Include="ViewModel\ProdukcjaLaczenieViewModel.cs" />
+    <Compile Include="ViewModel\ProdukcjaMagazynDokumentViewModel.cs" />
+    <Compile Include="ViewModel\ProdukcjaMagazynSpceyfikacjaViewModel.cs" />
+    <Compile Include="ViewModel\ProdukcjaMagazynViewModel.cs" />
+    <Compile Include="ViewModel\ProdukcjaMaszynaParamMonitViewModel.cs" />
+    <Compile Include="ViewModel\ProdukcjaPozycjeMonitVM.cs" />
+    <Compile Include="ViewModel\ProdukcjaTowaryViewModel.cs" />
+    <Compile Include="ViewModel\RowVM\PartiaSymVM.cs" />
+    <Compile Include="ViewModel\RowVM\ProdukcjaMagazynSpecyfikacjaVM.cs" />
+    <Compile Include="ViewModel\RowVM\ProdukcjaMGDwVM.cs" />
+    <Compile Include="ViewModel\RowVM\ProdukcjaKhVM.cs" />
+    <Compile Include="ViewModel\RowVM\ProdukcjaLiniaVM.cs" />
+    <Compile Include="ViewModel\RowVM\ProdukcjaMagazynPozycjaVM .cs" />
+    <Compile Include="ViewModel\RowVM\ProdukcjaMagazynVM.cs" />
+    <Compile Include="ViewModel\RowVM\ProdukcjaMaszynaParametrVM.cs" />
+    <Compile Include="ViewModel\RowVM\ProdukcjaMaszynaParametrMonitVM.cs" />
+    <Compile Include="ViewModel\RowVM\ProdukcjaMaszynaParametrWartVM.cs" />
+    <Compile Include="ViewModel\RowVM\ProdukcjaMaszynaVM.cs" />
+    <Compile Include="ViewModel\RowVM\WydanieTowaruVM.cs" />
+    <Compile Include="ViewModel\SpecyfikacjeViewModel.cs" />
+    <Compile Include="ViewModel\WyborProdMGDwViewModel.cs" />
+    <Compile Include="ViewModel\WyborKhViewModel.cs" />
+    <Compile Include="ViewModel\WydaniaTwViewModel.cs" />
+    <Compile Include="Views\DialogWindow.xaml.cs">
+      <DependentUpon>DialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DisplayControl.xaml.cs">
+      <DependentUpon>DisplayControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EditPartiaSYMView.xaml.cs">
+      <DependentUpon>EditPartiaSYMView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FlowDocumentToXamlConverter.cs" />
+    <Compile Include="ViewModel\LoginViewViewModel.cs" />
+    <Compile Include="ViewModel\ProdukcjaDetaleViewModel.cs" />
+    <Compile Include="ViewModel\ProdukcjaViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\RowVM\CommandVM.cs" />
+    <Compile Include="ViewModel\RowVM\ProdukcjaTwVM .cs" />
+    <Compile Include="ViewModel\RowVM\ProdukcjaDwVM.cs" />
+    <Compile Include="ViewModel\RowVM\ProdukcjaPozycjeVM.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\WyborDwViewModel.cs" />
+    <Compile Include="ViewModel\WyborTwViewModel.cs" />
+    <Compile Include="Views\HistoriaTowarowView.xaml.cs">
+      <DependentUpon>HistoriaTowarowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HistoriaTowarowWindow.xaml.cs">
+      <DependentUpon>HistoriaTowarowWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OknaDialogowe.cs" />
+    <Compile Include="Views\ParametrRadioControl.xaml.cs">
+      <DependentUpon>ParametrRadioControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PartieSYMView.xaml.cs">
+      <DependentUpon>PartieSYMView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaDetaleView.xaml.cs">
+      <DependentUpon>ProdukcjaDetaleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaDetaleViewWindow.xaml.cs">
+      <DependentUpon>ProdukcjaDetaleViewWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaDostawyWindow.xaml.cs">
+      <DependentUpon>ProdukcjaDostawyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaLaczenieView.xaml.cs">
+      <DependentUpon>ProdukcjaLaczenieView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaLaczenieWindow.xaml.cs">
+      <DependentUpon>ProdukcjaLaczenieWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaMagazynDokumentView.xaml.cs">
+      <DependentUpon>ProdukcjaMagazynDokumentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpecyfikacjaPakowaniaDokument.xaml.cs">
+      <DependentUpon>SpecyfikacjaPakowaniaDokument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaMagazynSpecyfikacjaPakowania.xaml.cs">
+      <DependentUpon>ProdukcjaMagazynSpecyfikacjaPakowania.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaMagazynView.xaml.cs">
+      <DependentUpon>ProdukcjaMagazynView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaMagazynWindow.xaml.cs">
+      <DependentUpon>ProdukcjaMagazynWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaMaszynaParamMonitView.xaml.cs">
+      <DependentUpon>ProdukcjaMaszynaParamMonitView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaMaszynaParamMonitWindow.xaml.cs">
+      <DependentUpon>ProdukcjaMaszynaParamMonitWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaMagazynSpecyfikacjaPakowaniaWindow.xaml.cs">
+      <DependentUpon>ProdukcjaMagazynSpecyfikacjaPakowaniaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaRozliczenieFKView.xaml.cs">
+      <DependentUpon>ProdukcjaRozliczenieFKView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaSymulacjaView.xaml.cs">
+      <DependentUpon>ProdukcjaSymulacjaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaTowaryView.xaml.cs">
+      <DependentUpon>ProdukcjaTowaryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaView.xaml.cs">
+      <DependentUpon>ProdukcjaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProdukcjaWindow.xaml.cs">
+      <DependentUpon>ProdukcjaWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\RowVM\ProdukcjaVM.cs" />
+    <Compile Include="ViewModel\RowVM\ViewVM.cs" />
+    <Compile Include="Views\ReportWindow.xaml.cs">
+      <DependentUpon>ReportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpecyfikacjaWzWindow.xaml.cs">
+      <DependentUpon>SpecyfikacjaWzWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SpecyfikacjePakowaniaLista.xaml.cs">
+      <DependentUpon>SpecyfikacjePakowaniaLista.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TowaryOczekujacePage.xaml.cs">
+      <DependentUpon>TowaryOczekujacePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WyborDwView.xaml.cs">
+      <DependentUpon>WyborDwView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WyborKhView.xaml.cs">
+      <DependentUpon>WyborKhView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WyborKhWindow.xaml.cs">
+      <DependentUpon>WyborKhWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WyborProdMGDwView.xaml.cs">
+      <DependentUpon>WyborProdMGDwView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WyborProdMGDwWindow.xaml.cs">
+      <DependentUpon>WyborProdMGDwWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WyborTwWindow.xaml.cs">
+      <DependentUpon>WyborTwWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WyborDwWindow.xaml.cs">
+      <DependentUpon>WyborDwWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WyborTwView.xaml.cs">
+      <DependentUpon>WyborTwView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WALUTY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WZ_SPECYFIKACJE.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WZ_SPECYFIKACJE_OPAKOWANIA.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WZ_SPECYFIKACJE_TOWARY.cs">
+      <DependentUpon>FzlModel.tt</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Skins\MainSkin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DialogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DisplayControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditPartiaSYMView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HistoriaTowarowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HistoriaTowarowWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParametrRadioControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PartieSYMView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaDetaleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaDetaleViewWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaDostawyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaLaczenieView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaLaczenieWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaMagazynDokumentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SpecyfikacjaPakowaniaDokument.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProdukcjaMagazynSpecyfikacjaPakowania.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaMagazynView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaMagazynWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaMaszynaParamMonitView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaMaszynaParamMonitWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaMagazynSpecyfikacjaPakowaniaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaRozliczenieFKView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaSymulacjaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaTowaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProdukcjaWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SpecyfikacjaWzWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SpecyfikacjePakowaniaLista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TowaryOczekujacePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WyborDwView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WyborKhView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WyborKhWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WyborProdMGDwView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WyborProdMGDwWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WyborTwWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\WyborDwWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WyborTwView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="FzlModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FzlModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="FZLDataSet.xsc">
+      <DependentUpon>FZLDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FZLDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FZLDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FZLDataSet.xss">
+      <DependentUpon>FZLDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FzlModel.edmx.diagram">
+      <DependentUpon>FzlModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imgaes\" />
+    <Folder Include="InteliboxDataProviders\" />
+    <Folder Include="Windows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FzlModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FzlModel.edmx</DependentUpon>
+      <LastGenOutput>FzlModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="FzlModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FzlModel.edmx</DependentUpon>
+      <LastGenOutput>FzlModel.cs</LastGenOutput>
+    </Content>
+    <Resource Include="production.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

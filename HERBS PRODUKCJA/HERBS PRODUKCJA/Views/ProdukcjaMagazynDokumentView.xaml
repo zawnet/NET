@@ -1,0 +1,215 @@
+﻿<UserControl x:Class="HERBS_PRODUKCJA.Views.ProdukcjaMagazynDokumentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HERBS_PRODUKCJA.Views"
+             xmlns:GalaSoft_MvvmLight_Command="http://www.galasoft.ch/mvvmlight"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+              xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+             mc:Ignorable="d" Height="600" Width="800">
+
+    <Control.Resources>
+        <col:ArrayList x:Key="arrList">
+            <col:DictionaryEntry Key="Nie" Value="0"/>
+            <col:DictionaryEntry Key="Tak" Value="1"/>
+
+        </col:ArrayList>
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        <BooleanToVisibilityConverter x:Key="BoolToVis2"/>
+        <ContextMenu  x:Key="RowMenu" DataContext="{Binding PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}">
+            <MenuItem Header="Edycja specyfikacji pakowania" CommandParameter="{Binding}"
+                  Command="{Binding DataContext.SpecyfikacjaCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGrid}}" />
+        </ContextMenu>
+        <Style x:Key="DefaultRowStyle" TargetType="{x:Type DataGridRow}">
+            <Setter Property="ContextMenu" Value="{StaticResource RowMenu}" />
+        </Style>
+        <CollectionViewSource x:Key="TYPYPRODDP" Source="{Binding TYPYPRODDP}" />
+    </Control.Resources>
+    
+        
+   
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="50" />
+            <RowDefinition  Height="20" />
+            <RowDefinition Height="85" />
+            <RowDefinition  Height="20" />
+            <RowDefinition  Height="400" />
+            <RowDefinition  />
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Right" Width="224" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
+            <Button Grid.Column="0" Grid.Row="0" Content="Drukuj" 
+       
+        ContextMenuService.IsEnabled="True">
+                <Button.ContextMenu>
+                    <ContextMenu >
+                        <MenuItem Header="Dokument przyjęcia" Command="{Binding DrukujCommand}"  CommandParameter="DK"/>
+                        <MenuItem Header="Etykieta" Command="{Binding DrukujCommand}" CommandParameter="ET"/>
+                        <MenuItem Header="Dokument wydania" Command="{Binding DrukujCommand}"  CommandParameter="DKWZ"/>
+                        <MenuItem Header="Specyfikacja pakowania"  Command="{Binding DrukujCommand}"  CommandParameter="SPEC"/>
+                    </ContextMenu>
+                </Button.ContextMenu>
+            </Button>
+            <Button Grid.Column="1" Grid.Row="0" Content="Operacje"/>
+            <Button Grid.Column="0" Grid.Row="1" Content="Anuluj" />
+            
+            <Button Grid.Column="1" Grid.Row="1" Content="Zapisz" Command="{Binding ZapiszCommand}" Click="Button_Click"/>
+        </Grid>
+        <Grid Grid.Row="1">
+
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0" Height="75">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="197*" />
+                <ColumnDefinition Width="46*" />
+                <ColumnDefinition Width="193*" />
+                <ColumnDefinition Width="58*" />
+                <ColumnDefinition Width="166*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition  />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label Content="Typ:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" />
+            <ComboBox Grid.Row="0" Grid.Column="1"
+                      ItemsSource="{Binding Path=ProdMGTypy}"    
+                   SelectedValue="{Binding SProdMgTyp, Mode=TwoWay}" 
+                 
+                      >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Path=Kod}" FontWeight="Bold"/>
+                            <TextBlock Text=" - "/>
+                            <TextBlock Text="{Binding Path=Nazwa}" FontStyle="Italic"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+
+            </ComboBox>
+            <Label Content="Kod:" Grid.Column="2" Grid.Row="0" HorizontalAlignment="Right" Width="33" />
+            <TextBox Grid.Column="3" Grid.Row="0" Text="{Binding ProdukcjaMagazyn.ProdukcjaMG.kod}" IsReadOnly="True" FontSize="16" FontWeight="Bold"/>
+
+            <Label Content="Data:" Grid.Column="4" Grid.Row="0" VerticalAlignment="Top" Height="25" HorizontalAlignment="Right" Width="37"/>
+            <DatePicker Grid.Column="5" Grid.Row="0" SelectedDate="{Binding ProdukcjaMagazyn.ProdukcjaMG.data, Mode=TwoWay}" />
+            <Label Content="Opis:" Grid.Column="4" Grid.Row="1"  HorizontalAlignment="Right" Width="37"/>
+            <TextBox Grid.Column="5" Grid.Row="1" Text="{Binding ProdukcjaMagazyn.ProdukcjaMG.opis}" IsReadOnly="False" FontSize="16" FontWeight="Bold"/>
+        </Grid>
+        <Grid Grid.Row="4">
+
+            <TabControl >
+                <TabItem Header="Towar" Margin="0,0,0,0" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="36*" />
+                            <ColumnDefinition Width="361*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <GroupBox Grid.Column="0" Grid.Row="0" Header="Kontrahent" Height="auto" VerticalAlignment="Top" Grid.ColumnSpan="2" Visibility="{Binding ShowKH, Converter={StaticResource BoolToVis2}, FallbackValue=Hidden}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="51*" />
+                                    <ColumnDefinition Width="209*" />
+                                    <ColumnDefinition Width="47*" />
+                                    <ColumnDefinition Width="327*" />
+                                    <ColumnDefinition Width="17*" />
+                                    <ColumnDefinition Width="131*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="23" />
+                                    <RowDefinition Height="23" />
+                                </Grid.RowDefinitions>
+                                <Label Content="Kod:"  Grid.Row="0" Grid.Column="0"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" BorderBrush="Black" Text="{Binding ProdukcjaMagazyn.ProdukcjaMG.khkod, Mode=TwoWay}" FontWeight="Bold" />
+                                <Label Content="NIP:"  Grid.Row="1" Grid.Column="2"/>
+                                <TextBox Grid.Row="1" Grid.Column="3" BorderBrush="Black" Text="{Binding ProdukcjaMagazyn.ProdukcjaMG.khnip, Mode=TwoWay}" />
+                                <Button Content="Wybierz"  Grid.Column="5" Grid.Row="0" Command="{Binding WstawKHCommand}"/>
+
+                                <Label Content="Nazwa:"  Grid.Row="1" Grid.Column="0"/>
+                                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ProdukcjaMagazyn.ProdukcjaMG.khnazwa, Mode=TwoWay}" BorderBrush="Black" FontStyle="Italic" />
+                                <Label Content="Adres:"  Grid.Row="0" Grid.Column="2"/>
+                                <TextBox Grid.Row="0" Grid.Column="3" BorderBrush="Black" Text="{Binding ProdukcjaMagazyn.ProdKH.Adres}" />
+
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Header="Pozycje" Margin="0,80,0,0" Grid.RowSpan="2" Grid.ColumnSpan="2">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition  Width="75" />
+                                    <ColumnDefinition  Width="75*"  />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="61*"  />
+                                    <RowDefinition Height="6*" />
+                                </Grid.RowDefinitions>
+                                
+                                <DataGrid
+                                      x:Name="pozycje"
+                                    RowStyle="{StaticResource DefaultRowStyle}"
+                                    AutoGenerateColumns="False"
+                                    CanUserAddRows="False"
+                                    SelectedItem="{Binding SelectedProdMZ, Mode=TwoWay}"
+                                    ItemsSource="{Binding PozycjeMZ, Mode=TwoWay}"
+                                    Grid.Row="0" Grid.ColumnSpan="2" TextInput="DataGrid_TextInput">
+                                    
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="CellEditEnding">
+                                            <GalaSoft_MvvmLight_Command:EventToCommand PassEventArgsToCommand="True" Command="{Binding CellEditEndingCommand}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                    <DataGrid.Columns>
+                                        <DataGridComboBoxColumn Header="TYP"
+                                                                     
+                                        		ItemsSource="{Binding Source={StaticResource TYPYPRODDP}}"
+                                        		SelectedValueBinding="{Binding ProdukcjaMZ.typ_produktu, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        		SelectedValuePath=""
+                                        		DisplayMemberPath="" />
+                                        <DataGridTextColumn Binding="{Binding ProdukcjaMZ.lp, Mode=TwoWay}"  Header="Lp." Width="0.5" MinWidth="30" FontWeight="Bold" Foreground="#FF293955" />
+                                        <DataGridTextColumn Binding="{Binding ProdukcjaMZ.nr_partii, Mode=TwoWay}"  Header="Nr partii" Width="0.5" MinWidth="80" FontWeight="Bold" Foreground="#FF293955" />
+                                        <DataGridTextColumn Binding="{Binding ProdukcjaMZ.kod, Mode=TwoWay}"   Header="Kod towaru" Width="0.5" MinWidth="250" FontWeight="Bold" />
+                                        <DataGridTextColumn Binding="{Binding ProdukcjaMZ.opis, Mode=TwoWay}"  Header="Nazwa" Width="0.5" MinWidth="250" />
+                                        <DataGridTextColumn x:Name="ilosc" Binding="{Binding ProdukcjaMZ.ilosc, StringFormat={}{0:n2}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="ilość" Width="50" MinWidth="50" />
+                                        <DataGridTextColumn Binding="{Binding ProdukcjaMZ.cena, StringFormat={}{0:n2}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="ilość" Width="50" MinWidth="50" Visibility="{Binding ShowPrice, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}" />
+                                        
+                                        <DataGridTextColumn Binding="{Binding ProdukcjaMZ.waga_brutto, StringFormat={}{0:n2},Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="waga brutto" Width="0.5" MinWidth="50" />
+                                        <DataGridTextColumn Binding="{Binding ProdukcjaMZ.waga_tara, StringFormat={}{0:n2},  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="tara" Width="0.5" MinWidth="50" />
+                                        <DataGridTextColumn Binding="{Binding ProdukcjaMZ.jm, Mode=TwoWay}"  Header="jm" Width="0.5" MinWidth="50" />
+                                        <DataGridTextColumn Binding="{Binding ProdukcjaMZ.opisdod, Mode=TwoWay}"  Header="Dodatkowe informacje" Width="0.5" MinWidth="250" />
+                                    </DataGrid.Columns>
+
+                                </DataGrid>
+                                <Button x:Name="button" Content="Dodaj" HorizontalAlignment="Left"  Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Width="75" Height="20"  Command="{Binding WstawTWCommand}"/>
+                                <Button x:Name="button3" Content="Dodaj" HorizontalAlignment="Left"  Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Width="75" Height="20"  Command="{Binding WstawDWCommand}"
+                                     Visibility="{Binding ButtCancel, Converter={StaticResource BoolToVis}, FallbackValue=Hidden}"   
+                                        />
+                                <Button x:Name="button2" Content="Usuń" HorizontalAlignment="Left"  Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Width="75" Height="20"  Command="{Binding  UsunPozycjeCommand}"/>
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+
+                </TabItem>
+                <TabItem Header="Laboratoriuim" />
+                <TabItem Header="Produkcja" Margin="0,0,0,0"/>
+            </TabControl>
+        </Grid>
+    </Grid>
+</UserControl>

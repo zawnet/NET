@@ -1,0 +1,755 @@
+﻿<UserControl x:Class="HERBS_PRODUKCJA.Views.ProdukcjaDetaleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HERBS_PRODUKCJA.Views"
+             xmlns:vm="clr-namespace:HERBS_PRODUKCJA.ViewModel"
+             xmlns:help="clr-namespace:HERBS_PRODUKCJA.Helpers"
+             xmlns:l="clr-namespace:HERBS_PRODUKCJA.DataTemplates"
+           
+            xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+             xmlns:fsc="clr-namespace:FsWpfControls.FsRichTextBox;assembly=FsRichTextBox" 
+             mc:Ignorable="d" Width="1108.392" Height="802.984"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+              xmlns:GalaSoft_MvvmLight_Command="http://www.galasoft.ch/mvvmlight"
+             xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+             >
+    <Control.Resources>
+        <col:ArrayList x:Key="arrList">
+            <col:DictionaryEntry Key="Nie" Value="0"/>
+            <col:DictionaryEntry Key="Tak" Value="1"/>
+
+        </col:ArrayList>
+        <CollectionViewSource x:Key="Waluty" Source="{Binding Waluty}" />
+        <CollectionViewSource x:Key="Opakowania" Source="{Binding Opakowania}" />
+        <CollectionViewSource x:Key="Opakowania2" Source="{Binding Opakowania}" />
+        <CollectionViewSource x:Key="Magazyny" Source="{Binding Magazyny}" />
+        <CollectionViewSource x:Key="TYPYPRODDP" Source="{Binding TYPYPRODDP}" />
+        <local:FlowDocumentToXamlConverter x:Key="flowDocumentConverter"/>
+
+        <vm:CellEnabled x:Key="CellEnabled" />
+        <vm:YesNoToBooleanConverter x:Key="YesNoToBooleanConverter" />
+        <help:DataGridColumnVisibilityConverter x:Key="DataGridColumnVisibilityConverter" />
+        <Style x:Key="WrappedColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock TextWrapping="Wrap" Text="{Binding}"></TextBlock>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!-- Default DataTemplate -->
+        <DataTemplate x:Key="DefaultDataTemplate">
+            <Grid Margin="4" MinHeight="25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Key" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Podaj wartość: " FontWeight="Bold"  />
+                <TextBox  Grid.Column="1" Text="{Binding Wartosc.wart }" MinWidth="30" />
+            </Grid>
+        </DataTemplate>
+
+        <!-- DataTemplate for Booleans -->
+        <DataTemplate x:Key="BooleanDataTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Key" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <CheckBox  IsChecked="{Binding IsSelected}" Grid.Column="0" />
+                <TextBlock Text="TAK" Grid.Column="1"
+                           FontWeight="Bold" Foreground="Navy"/>
+            </Grid>
+        </DataTemplate>
+        <!-- DataTemplate for Enums -->
+        <DataTemplate x:Key="EnumDataTemplate">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Key" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <CheckBox  IsChecked="{Binding IsSelected}" Grid.Column="0" />
+                <TextBlock Text="{Binding Wartosc.wart}" Grid.Column="1"
+                           FontWeight="Bold" Foreground="Navy"/>
+            </Grid>
+        </DataTemplate>
+        <l:ProdMaszynaParamDataTemplateSelector x:Key="templateSelector"
+              DefaultnDataTemplate="{StaticResource DefaultDataTemplate}"
+              BooleanDataTemplate="{StaticResource BooleanDataTemplate}" 
+              EnumDataTemplate="{StaticResource EnumDataTemplate}"/>
+    </Control.Resources>
+    <Grid Margin="0,0,10,103">
+        <GroupBox x:Name="groupBox" Header="Informacje" Margin="0,0,0,0" VerticalAlignment="Top" Height="144" Background="AliceBlue">
+            <Grid Margin="0,0,0,-12">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <CheckBox x:Name="checkBox" Content="Zakończone" Command="{Binding FinishCommand, Mode=TwoWay}" IsChecked="{Binding IsFinish, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="145" Grid.ColumnSpan="2" Margin="869,0,0,21" Grid.Row="1" />
+
+                <DatePicker Grid.Column="1" Margin="849,21,0,0" Grid.Row="1"  SelectedDate="{Binding ProdukcjaInfo.Produkcja.data, Mode=TwoWay}"  HorizontalAlignment="Left" Width="148" Height="25" VerticalAlignment="Top" />
+                <Label Content="Data wprowadzenia" Grid.Column="1" Margin="728,21,0,0" Grid.Row="1" HorizontalAlignment="Left" Width="121" Height="25" VerticalAlignment="Top" />
+                <DatePicker Grid.Column="1" Margin="849,48,0,0" Grid.Row="1"  IsEnabled="{Binding IsFinishDate}"  SelectedDate="{Binding ProdukcjaInfo.Produkcja.dataprod, Mode=TwoWay}" HorizontalAlignment="Left" Width="148" Height="25" VerticalAlignment="Top" />
+                <Label Content="Data zakończenia" Grid.Column="1" Margin="738,44,0,0" Grid.Row="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Right" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="106" />
+                <Label x:Name="label1" Content="Wprowadził:" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Margin="0,27,0,0"/>
+                <Label x:Name="label2" Content="Zatwierdził:" Grid.Column="1" HorizontalAlignment="Left" Margin="0,67,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                <TextBox x:Name="textBox1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="6,49,0,0" Grid.Row="1" TextWrapping="Wrap"  Text="{Binding ProdukcjaInfo.Produkcja.osoba, Mode=TwoWay}" VerticalAlignment="Top" Width="106" IsEnabled="False"/>
+                <TextBox x:Name="textBox2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="6,89,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="106" IsEnabled="False"/>
+                <Label  Content="Uwagi:" Grid.Column="1" Margin="112,28,843,42" Grid.Row="1"/>
+                <TextBox x:Name="textBox3" Grid.Column="1" Margin="117,0,599,47" Grid.Row="1" Text="{Binding ProdukcjaInfo.Produkcja.opis, Mode=TwoWay}" Height="21" VerticalAlignment="Bottom" />
+                <CheckBox x:Name="checkBox_Copy" Content="Częsciowe" Command="{Binding PartialCommand, Mode=TwoWay}" IsChecked="{Binding IsPartial, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="145" Grid.ColumnSpan="2" Margin="869,0,0,3" Grid.Row="1" IsEnabled="{Binding IsCanSave}"/>
+
+                <DatePicker Grid.Column="1" Margin="548,21,0,71" Grid.Row="1"  SelectedDate="{Binding ProdukcjaInfo.Produkcja.termin_rozpoczecia}"  HorizontalAlignment="Left" Width="164" />
+                <DatePicker Grid.Column="1" Margin="548,0,0,47" Grid.Row="1"   SelectedDate="{Binding ProdukcjaInfo.Produkcja.termin_zakonczenia}" IsEnabled="{Binding IsCanSave}"  HorizontalAlignment="Left" Width="164" Height="25" VerticalAlignment="Bottom" />
+                <Label Content="Termin rozpoczęcia:" Grid.Column="1" Margin="431,21,0,0" Grid.Row="1" HorizontalAlignment="Left" Width="117" Height="26" VerticalAlignment="Top" />
+                <Label Content="Termin zakończenia:" Grid.Column="1" Margin="431,47,0,0" Grid.Row="1" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Right" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="117" />
+                <CheckBox x:Name="checkBox_Copy1" Content="Zlecenie zerowe" Command="{Binding ZeroCommand, Mode=TwoWay}" IsChecked="{Binding IsZero, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="106" Grid.ColumnSpan="2" Margin="729,0,0,3" Grid.Row="1" IsEnabled="{Binding IsCanSave}"/>
+                <CheckBox x:Name="checkBox_Copy2" Content="WG po kosztach wyt." Command="{Binding WycenaTrybCommand, Mode=TwoWay}" IsChecked="{Binding WgWycenaTryb, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="135" Grid.ColumnSpan="2" Margin="729,0,0,20" Grid.Row="1" IsEnabled="False" />
+            </Grid>
+
+        </GroupBox>
+        <GroupBox x:Name="groupBox_Copy" Header="Parametry" Margin="0,149,10,-98" Background="#FFF7F7F7" Height="649" VerticalAlignment="Top" >
+            <TabControl x:Name="tabControl" Margin="0,0,0,116">
+                <TabItem Header="Surowce do produkcji" Height="24" VerticalAlignment="Top" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="392"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" >
+                            <Label Content="Opis:" />
+                            <TextBox  Text="{Binding ProdukcjaInfo.Produkcja.opis_surowce, Mode=TwoWay}" TextWrapping="Wrap" Margin="0,0,0,0"  Height="80" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+                        </StackPanel>
+
+                        <ScrollViewer  HorizontalScrollBarVisibility="Auto" Grid.Row="1" Grid.ColumnSpan="3" Height="450">
+                            <StackPanel VerticalAlignment="Top" Height="450">
+                                <StackPanel Grid.ColumnSpan="2" Margin="0,0,0,0" Height="450">
+                                    <DataGrid AutoGenerateColumns="False"
+                                		ItemsSource="{Binding ProdukcjaPozycjeRW, IsAsync=True, Mode=TwoWay}"
+                                		HeadersVisibility="Column"
+                                              CanUserDeleteRows="False"
+                                		SelectedItem="{Binding SelectedRW, Mode=TwoWay}"
+                                		SelectionMode="Single"
+                                		Margin="0,0,0,0"
+                                              CanUserAddRows="True"
+                                		x:Name="prodRW"  Height="350"  Width="1052" HorizontalScrollBarVisibility="Visible" 
+                                              >
+
+
+                                        <DataGrid.CellStyle>
+                                            <Style TargetType="{x:Type DataGridCell}" >
+                                                <Setter Property="IsEnabled" Value="{Binding Pozycja.id_hm, Converter={StaticResource CellEnabled}}"/>
+                                            </Style>
+                                        </DataGrid.CellStyle>
+
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="CellEditEnding">
+                                                <GalaSoft_MvvmLight_Command:EventToCommand PassEventArgsToCommand="True" Command="{Binding CellEditEndingCommand}"/>
+
+                                            </i:EventTrigger>
+
+                                        </i:Interaction.Triggers>
+
+                                        <DataGrid.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem
+
+                Header="Usun dostawe FK"
+
+                Command="{Binding UsunProdHMDwCommand}"
+
+                CommandParameter="{Binding PlacementTarget.SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"/>
+                                            </ContextMenu>
+                                        </DataGrid.ContextMenu>
+                                        <DataGrid.Columns>
+                                            <DataGridCheckBoxColumn Header="MAG OK" Width="60" Binding="{Binding Pozycja.ztw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.lp, Mode=TwoWay}"  Header="lp" Width="25"  IsReadOnly="True"/>
+                                            <DataGridTextColumn Binding="{Binding Pozycja.nr_partii, Mode=TwoWay}"  Header="Nr partii" Width="0.5" MinWidth="70"  />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.koddw, Mode=TwoWay}"  Header="Dostawa FK" Width="0.5" MinWidth="100" FontWeight="Bold" Foreground="#FF293955" Visibility="Hidden" />
+                                            <DataGridTemplateColumn Visibility="Hidden">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button Content="..." Command="{Binding DataContext.DodajProdHMDwCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding}" />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                            <DataGridTextColumn Binding="{Binding Pozycja.kodmgdw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="Dostawa MG" Width="0.5" MinWidth="160" FontWeight="Bold" Foreground="#FF293955" IsReadOnly="True" />
+                                            <DataGridTemplateColumn>
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <Button Content="..." Command="{Binding DataContext.DodajProdMgDwCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}}" CommandParameter="{Binding}" />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            </DataGridTemplateColumn>
+                                            <DataGridTextColumn Binding="{Binding Pozycja.khnazwa, Mode=TwoWay}"  Header="Kontrahent" Width="0.5" MinWidth="140" FontWeight="Bold" Foreground="#FF293955"   IsReadOnly="True"/>
+                                            <DataGridTextColumn Binding="{Binding Pozycja.kodtw, Mode=TwoWay}"   Header="Kod towaru" Width="0.5" MinWidth="200" FontWeight="Bold" IsReadOnly="True"/>
+                                            <DataGridTextColumn Binding="{Binding Pozycja.nazwatw, Mode=TwoWay}"  Header="Nazwa" Width="0.5" MinWidth="200"  Visibility="Hidden"/>
+                                            <DataGridTextColumn Binding="{Binding Pozycja.ilosc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="ilość" Width="0.5" MinWidth="50" Visibility="Hidden" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.ilosc_mg, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="ilość magazyn" Width="0.5" MinWidth="85" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.cena, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="ilość magazyn" Width="0.5" MinWidth="85" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.jm, Mode=TwoWay}"  Header="jm" Width="0.5" MinWidth="25" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.wilgotnosc, Mode=TwoWay, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}"   Header="wilg" Width="0.5" MinWidth="50" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.czystosc, Mode=TwoWay, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}"  Header="czyst" Width="0.5" MinWidth="50" />
+                                            <DataGridComboBoxColumn Header="rozkruszek" SelectedValueBinding="{Binding Pozycja.rozkruszek, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{StaticResource arrList}" DisplayMemberPath="Key" SelectedValuePath="Value" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.frakcja, Mode=TwoWay}"  Header="frakcja" Width="0.5" MinWidth="70"  />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.opis, Mode=TwoWay}"  Header="opis" Width="0.5" MinWidth="230"  />
+
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal" Width="1002" Margin="0 -50 0 0">
+                                    <Grid Width="{Binding ActualWidth, ElementName=kodtw}">
+                                        <TextBlock Text="Razem:" HorizontalAlignment="Right" />
+                                    </Grid>
+                                    <Grid Width="{Binding ActualWidth, ElementName=ilosc}" ShowGridLines="True">
+                                        <TextBlock Text="{Binding ProdukcjaInfo.Produkcja.ilosc_surowcow, Mode=TwoWay}"  FontWeight="Bold" RenderTransformOrigin="-4.511,-0.125"/>
+                                    </Grid>
+                                    <Grid Width="{Binding ActualWidth, ElementName=wartosc}" ShowGridLines="True">
+                                        <TextBlock Text="{Binding WartoscRW, Mode=TwoWay}" Margin="321,0,-316,0" HorizontalAlignment="Left" Width="65" FontWeight="Bold"/>
+                                    </Grid>
+                                    <Grid>
+                                        <Button x:Name="button_MgazynRW" Content="Pobierz surowce z magazynu" VerticalAlignment="Top" Grid.Column="3"   Command="{Binding PobierzZMagazynuCommand}" IsEnabled="True" />
+                                    </Grid>
+                                </StackPanel>
+                            </StackPanel>
+                        </ScrollViewer>
+                        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Margin="10,13,39,89" Grid.Row="1" Height="36" >
+                            <Grid>
+                                <Button x:Name="button_DW_add" Content="+" Margin="0,0,0,-166" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Right" Width="25" Command="{Binding WybierzDWMGCommand}" IsEnabled="{Binding IsCanSrcAdd}"  Visibility="Visible"/>
+                            </Grid>
+                            <Grid>
+                                <Button x:Name="button_DW_remove" Content="-" Margin="0,0,0,-166" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="25" Command="{Binding UsunRWCommand}" IsEnabled="{Binding IsCanSrcRem}"  Visibility="Visible"/>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+
+                </TabItem>
+                <TabItem Header="Wyróby gotowe" Height="24" VerticalAlignment="Bottom" >
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Grid.Row="0">
+                            <Label  Content="Opis wyrobu gotowego:"  Margin="0,0,0,0" />
+
+                            <TextBox x:Name="textBox4" Margin="0,0,0,0" Text="{Binding ProdukcjaInfo.Produkcja.opis_wg, Mode=TwoWay}" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="80" BorderBrush="Black" AcceptsReturn="True" />
+
+                            <!--
+                            <TextBox x:Name="textBox4" Margin="0,0,0,0" Text="{Binding IsShowPlanPrice, Mode=TwoWay}" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Visible" Height="30" BorderBrush="Black" AcceptsReturn="True" />
+                            -->
+                        </StackPanel>
+                        <ScrollViewer  Grid.Row="1"  VerticalAlignment="Top" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"  Margin="0,0,0,0">
+                            <StackPanel>
+                                <StackPanel Margin="0,0,0,0" Height="180" >
+
+                                    <DataGrid  
+                                        
+                                		AutoGenerateColumns="False"
+                                		ItemsSource="{Binding ProdukcjaPozycjePW, Mode=TwoWay, IsAsync=True}"
+                                		HeadersVisibility="Column"
+                                		SelectedItem="{Binding SelectedPW, Mode=TwoWay}"
+                                		SelectionMode="Single"
+                                        CanUserSortColumns="False"
+                                		Margin="0,0,0,0"
+                                		x:Name="prodPW"  Height="180" VerticalAlignment="Top" Width="1069" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" CanUserAddRows="False"
+                  >
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="CellEditEnding">
+                                                <GalaSoft_MvvmLight_Command:EventToCommand PassEventArgsToCommand="True" Command="{Binding WgCellEditEndingCommand}"/>
+
+                                            </i:EventTrigger>
+                                            <i:EventTrigger EventName="SelectionChanged">
+                                                <GalaSoft_MvvmLight_Command:EventToCommand PassEventArgsToCommand="True" Command="{Binding GetProddpMonitCommand}"/>
+
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+
+                                        <DataGrid.CellStyle>
+                                            <Style TargetType="{x:Type DataGridCell}" >
+                                                <Setter Property="IsEnabled" Value="{Binding Pozycja.id_hm, Converter={StaticResource CellEnabled}}"/>
+                                            </Style>
+                                        </DataGrid.CellStyle>
+                                        <DataGrid.ContextMenu>
+                                            <ContextMenu>
+                                                <MenuItem
+                                                    Header="Zmień towar"
+                                                    Command="{Binding ZmienTowarWGCommand}"
+                                                    CommandParameter="{Binding PlacementTarget.SelectedItem, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContextMenu}}}"/>
+                                            </ContextMenu>
+                                        </DataGrid.ContextMenu>
+
+                                        <DataGrid.Columns>
+                                            <DataGridCheckBoxColumn Header="MAG OK" Width="60" Binding="{Binding Pozycja.ztw, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                            <DataGridComboBoxColumn Header="TYP"
+                                                                     
+                                        		ItemsSource="{Binding Source={StaticResource TYPYPRODDP}}"
+                                        		SelectedValueBinding="{Binding Pozycja.typ_produktu, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        		SelectedValuePath=""
+                                        		DisplayMemberPath="" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.kodtw, Mode=TwoWay}"   Header="Kod towaru" Width="0.5" MinWidth="250" x:Name="kodtw"/>
+                                            <DataGridTextColumn Binding="{Binding Pozycja.nazwatw, Mode=TwoWay}"  Header="Nazwa" Width="0.5" MinWidth="250" Visibility="Hidden" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.ilosc, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"  Header="ilość" Width="0.5" MinWidth="50" x:Name="ilosc" IsReadOnly="False" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.jm, Mode=TwoWay}"  Header="jm" Width="0.5" MinWidth="50" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.planowana_cena, StringFormat=N2, UpdateSourceTrigger=PropertyChanged , Mode=TwoWay}"  Header="cena plan" Width="0.5" MinWidth="70" IsReadOnly="{Binding IsShowPlanPrice}"  Visibility="Hidden" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.surowiec_koszt, StringFormat=N2, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"  Header="surowiec_koszt"  MinWidth="70" IsReadOnly="True"  Visibility="Hidden" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.produkcja_koszt, StringFormat=N2, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"  Header="produkcja_koszt"  MinWidth="70" IsReadOnly="True"  Visibility="Hidden"/>
+                                            <DataGridComboBoxColumn Header="Waluty"
+                                                                     Visibility="Hidden"
+                                        		ItemsSource="{Binding Source={StaticResource Waluty}}"
+                                        		SelectedValueBinding="{Binding Pozycja.waluta, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        		SelectedValuePath=""
+                                        		DisplayMemberPath="" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.kurs, Mode=TwoWay, StringFormat=N4, UpdateSourceTrigger=PropertyChanged}"  Header="kurs"  MinWidth="70"  Visibility="Hidden" />
+                                            <DataGridTemplateColumn Header="Data kursu" Visibility="Hidden">
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding Pozycja.data_kursu, StringFormat=d}"  Visibility="Hidden" />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                                <DataGridTemplateColumn.CellEditingTemplate>
+                                                    <DataTemplate>
+                                                        <DatePicker SelectedDate="{Binding Pozycja.data_kursu}"  Visibility="Hidden" />
+                                                    </DataTemplate>
+                                                </DataGridTemplateColumn.CellEditingTemplate>
+                                            </DataGridTemplateColumn>
+
+                                            <DataGridTextColumn Binding="{Binding Pozycja.cena, Mode=TwoWay, StringFormat=N2}"  Header="cena"  MinWidth="70" IsReadOnly="True"  Visibility="Hidden" FontWeight="Bold"  />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.wartosc, Mode=TwoWay, StringFormat=N2}"   Header="wartosc" MinWidth="70" IsReadOnly="True"  x:Name="wartosc"  Visibility="Hidden" FontStyle="Italic"  />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.nr_partii,UpdateSourceTrigger=PropertyChanged,  Mode=TwoWay}"  Header="Nr partii" Width="0.5" MinWidth="70"  />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.frakcja, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"  Header="frakcja" Width="0.5" MinWidth="70"  />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.wilgotnosc,  Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=N2}"   Header="wilg" Width="0.5" MinWidth="50" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.czystosc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=N2}"  Header="czyst" Width="0.5" MinWidth="50" />
+                                            <DataGridComboBoxColumn Header="rozkruszek" SelectedValueBinding="{Binding Pozycja.rozkruszek, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{StaticResource arrList}" DisplayMemberPath="Key" SelectedValuePath="Value" />
+                                            <DataGridTextColumn Binding="{Binding Pozycja.opis, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }"  Header="opis" Width="0.5" MinWidth="230"  />
+
+
+                                        </DataGrid.Columns>
+
+
+                                    </DataGrid>
+                                </StackPanel>
+                                <StackPanel Grid.Row="2" Margin="0,0,0,0" Background="AliceBlue">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="25"/>
+                                            <ColumnDefinition Width="25"/>
+                                            <ColumnDefinition Width="auto" />
+                                            <ColumnDefinition Width="auto" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Button x:Name="button_TW_add" Content="+" VerticalAlignment="Top" Grid.Column="0"  Width="25" Command="{Binding WybierzTWCommand}" />
+
+
+                                        <Button x:Name="button_TW_remove" Content="-" VerticalAlignment="Top" Grid.Column="1"   Width="25" Command="{Binding UsunPWCommand}"   />
+                                        <StackPanel Grid.Column="2" HorizontalAlignment="Left" Orientation="Horizontal" Width="950" Margin="0,0,-449,0">
+                                            <Grid Width="{Binding ActualWidth, ElementName=kodtw}">
+                                                <TextBlock Text="Razem:" HorizontalAlignment="Right" />
+                                            </Grid>
+                                            <Grid Width="{Binding ActualWidth, ElementName=ilosc}" ShowGridLines="True">
+                                                <TextBlock Text="{Binding ProdukcjaInfo.Produkcja.ilosc_wyrobu_got, Mode=TwoWay}"  FontWeight="Bold" RenderTransformOrigin="-4.511,-0.125"/>
+                                            </Grid>
+                                            <Grid Width="{Binding ActualWidth, ElementName=wartosc}" ShowGridLines="True">
+                                                <TextBlock Text="{Binding WartoscWG, Mode=TwoWay}" Margin="510,0,-547,0" HorizontalAlignment="Left" Width="107" FontWeight="Bold"/>
+                                            </Grid>
+                                        </StackPanel>
+                                        <Button x:Name="button_MgazynWG" Content="Przekaż na Magazyn WG" VerticalAlignment="Top" Grid.Column="3"   Command="{Binding PrzekazNaMagazynWGCommand}" IsEnabled="True"  Visibility="Hidden"/>
+                                    </Grid>
+                                </StackPanel>
+
+                            </StackPanel>
+                        </ScrollViewer>
+                        
+                        <StackPanel MinHeight="150" Background="Azure" Grid.Row="3" Margin="0,0,0,0" Height="150" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+                            <DataGrid  Height="150" 
+                                           ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+                                		AutoGenerateColumns="False"
+                                		ItemsSource="{Binding ProdukcjaPozycjeMonitTMP, Mode=TwoWay}"
+                                		HeadersVisibility="Column"
+                                		SelectedItem="{Binding SelectedMONIT, Mode=TwoWay}"
+                                		CanUserAddRows="False"
+                                       
+                                           VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible"
+                                      >
+                                
+
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="CellEditEnding">
+                                        <GalaSoft_MvvmLight_Command:EventToCommand PassEventArgsToCommand="True" Command="{Binding MonitCellEditEndingCommand}"/>
+
+                                    </i:EventTrigger>
+
+                                </i:Interaction.Triggers>
+
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Binding="{Binding ProdDPMonit.kodtw, Mode=TwoWay}"  Header="kod towaru" HeaderStyle="{StaticResource WrappedColumnHeaderStyle}"  />
+                                    <DataGridTemplateColumn Header="Data">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <DatePicker SelectedDate="{Binding ProdDPMonit.data, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                        <DataGridTemplateColumn.CellEditingTemplate>
+                                            <DataTemplate>
+                                                <DatePicker SelectedDate="{Binding ProdDPMonit.data, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellEditingTemplate>
+                                    </DataGridTemplateColumn>
+
+                                    <DataGridTextColumn Binding="{Binding ProdDPMonit.godzina, Mode=TwoWay, StringFormat=\{0:hh:mm tt\}}"  Header="godzina"  HeaderStyle="{StaticResource WrappedColumnHeaderStyle}" />
+                                    <DataGridTextColumn Binding="{Binding ProdDPMonit.ilosc, Mode=TwoWay, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}"  Header="ilość"   HeaderStyle="{StaticResource WrappedColumnHeaderStyle}"/>
+                                    <DataGridTextColumn Binding="{Binding ProdDPMonit.oznaczenie, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Header="ozn."   />
+                                    <DataGridComboBoxColumn Header="Opakowanie"
+                                        		ItemsSource="{Binding Source={StaticResource Opakowania}}"
+                                        		SelectedValueBinding="{Binding ProdDPMonit.id_opakowania, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        		SelectedValuePath="id"
+                                        		DisplayMemberPath="nazwa" HeaderStyle="{StaticResource WrappedColumnHeaderStyle}" />
+                                    <DataGridTextColumn Binding="{Binding ProdDPMonit.ilosc_opakowania, Mode=TwoWay, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}"  Header="ilość opakownaia" HeaderStyle="{StaticResource WrappedColumnHeaderStyle}" Width="50" />
+                                    <DataGridTextColumn Binding="{Binding ProdDPMonit.ilewopakowaniu, Mode=TwoWay, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}"  Header="w opakowaniu"  HeaderStyle="{StaticResource WrappedColumnHeaderStyle}" Width="50"/>
+                                    <DataGridTextColumn Binding="{Binding ProdDPMonit.waga_opakowania, Mode=TwoWay, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}"  Header="waga opakownaia"  HeaderStyle="{StaticResource WrappedColumnHeaderStyle}" Width="50" />
+                                    <DataGridComboBoxColumn Header="Opakowanie2"
+                                        		ItemsSource="{Binding Source={StaticResource Opakowania2}}"
+                                        		SelectedValueBinding="{Binding ProdDPMonit.id_opakowania2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        		SelectedValuePath="id"
+                                        		DisplayMemberPath="nazwa" />
+                                    <DataGridTextColumn Binding="{Binding ProdDPMonit.ilosc_opakowania2, Mode=TwoWay, StringFormat=N2}"  Header="ilość opakownaia2"  HeaderStyle="{StaticResource WrappedColumnHeaderStyle}" Width="50"/>
+                                    <DataGridTextColumn Binding="{Binding ProdDPMonit.waga_opakowania_2, Mode=TwoWay, StringFormat=N2, UpdateSourceTrigger=PropertyChanged}"  Header="waga opakownaia2" HeaderStyle="{StaticResource WrappedColumnHeaderStyle}"  Width="50"/>
+                                    <DataGridComboBoxColumn Header="Składowanie"
+                                        		ItemsSource="{Binding Source={StaticResource Magazyny}}"
+                                        		SelectedValueBinding="{Binding ProdDPMonit.id_miejsca_skladowania, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                        		SelectedValuePath="id"
+                                        		DisplayMemberPath="nazwa" />
+                                    <DataGridTemplateColumn Header="termin przydatnosci" HeaderStyle="{StaticResource WrappedColumnHeaderStyle}" Width="100">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <DatePicker SelectedDate="{Binding ProdDPMonit.termin_przydatnosci, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                        <DataGridTemplateColumn.CellEditingTemplate>
+                                            <DataTemplate>
+                                                <DatePicker SelectedDate="{Binding ProdDPMonit.termin_przydatnosci, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  />
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellEditingTemplate>
+                                    </DataGridTemplateColumn>
+                                </DataGrid.Columns>
+
+
+                            </DataGrid>
+                        </StackPanel>
+                        <StackPanel Background="Azure" Grid.Row="4" Visibility="Visible">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="25"/>
+                                    <ColumnDefinition Width="25"/>
+                                    <ColumnDefinition Width="150"  />
+                                    <ColumnDefinition Width="150"  />
+                                    <ColumnDefinition Width="*"  />
+                                </Grid.ColumnDefinitions>
+                                <Button x:Name="button_PRODDP_MONIT_add" Content="+" VerticalAlignment="Top" Grid.Column="0"  Width="25" Command="{Binding DodajMonitCommand}" />
+                                <Button x:Name="button_PRODDP_MONIT_remove" Content="-" VerticalAlignment="Top" Grid.Column="1"   Width="25" Command="{Binding UsunMonitCommand}"   />
+                                <Button x:Name="button_PRODDP_MONIT_spec" Content="Specyfikacja pakowania" Grid.Column="2" HorizontalAlignment="Right" Command="{Binding SpecyfiakcjaCommand}" />
+                                <Button x:Name="button_PRODDP_MONIT_kody" Content="Generuj kody GS1" Grid.Column="3" HorizontalAlignment="Right" Command="{Binding KodyCommand}" />
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+
+                </TabItem>
+                <TabItem Header="Marszruta technologiczna">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" MinWidth="240"/>
+                            <ColumnDefinition Width="Auto" MinWidth="40" />
+                            <ColumnDefinition Width="Auto" MinWidth="240"/>
+                            <ColumnDefinition Width="Auto" MinWidth="220"/>
+                            <ColumnDefinition Width="Auto" MinWidth="250"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" MinHeight="276"/>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <GroupBox Header="Linie produkcyjne (Procesy)"  Grid.Column="0">
+                            <ListBox Name="cList" ItemsSource="{Binding Path=Linie}" SelectedItem="{Binding LinieSelectedItem}" SelectionMode="Single">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding nazwa}"
+                           FontWeight="Bold" Foreground="Navy"/>
+                                            <TextBlock Text="{Binding nazwa_procesu}"
+                           FontWeight="Normal" FontStyle="Italic" Foreground="Navy"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
+                        </GroupBox>
+                        <StackPanel Grid.Column="1" >
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 100 0 0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"   />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"  />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Button Grid.Row="0" Content=" &gt; " Grid.Column="0" Command="{Binding DodajLinieCommand}" />
+                                <Button Grid.Row="1" Content=" &lt; "  Grid.Column="0" Command="{Binding UsunLinieCommand}" />
+                            </Grid>
+
+                        </StackPanel>
+                        <GroupBox Header="Wybrane" Grid.Column="2"  >
+                            <ListBox Name="cList2" ItemsSource="{Binding Path=ProdukcjaLinie}" SelectedItem="{Binding ProdukcjaLinieSelectedItem}" SelectionMode="Single" >
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+
+                                            <TextBlock Text="{Binding LiniaPW.nazwa}"
+                           FontWeight="Bold" Foreground="Navy"/>
+                                            <TextBlock Text="{Binding LiniaPW.nazwa_procesu}"
+                           FontWeight="Normal" FontStyle="Italic" Foreground="Navy"/>
+                                        </StackPanel>
+
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </GroupBox>
+
+                        <GroupBox Header="Maszyny" Grid.Column="3" >
+
+                            <ListBox Name="cList3" ItemsSource="{Binding Path=ProdukcjaLinieSelectedItem.Maszyny}"
+                                     SelectedItem="{Binding ProdukcjaMaszynaSelectedItem}"
+                                     SelectionMode="Single" 
+                                     ScrollViewer.HorizontalScrollBarVisibility="Visible" 
+                                     ScrollViewer.VerticalScrollBarVisibility="Visible" 
+                                     Height="255" VerticalAlignment="Top" >
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <CheckBox  IsChecked="{Binding IsSelected}" Grid.Column="0" />
+                                                <TextBlock Text="{Binding Maszyna.nazwa}" Grid.Column="1"
+                           FontWeight="Bold" Foreground="Navy"/>
+                                            </Grid>
+                                        </StackPanel>
+
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </GroupBox>
+                        <GroupBox Header="Maszyny - Parametry" Grid.Column="4" Margin="0,0,0,1" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition  Height="Auto"/>
+                                    <RowDefinition  Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <ListBox  ItemsSource="{Binding Path=ProdukcjaMaszynaSelectedItem.Parametry}"
+                                     Grid.Column="0"
+                                         Grid.Row="0"
+                                         Width="240"
+                                     SelectionMode="Single"
+                                          SelectedItem="{Binding ProdukcjaMaszynaParametrSelectedItem}"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Visible" 
+                                     ScrollViewer.VerticalScrollBarVisibility="Visible" 
+                                     VerticalAlignment="Top" >
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto" />
+                                                        <ColumnDefinition Width="Auto" />
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <CheckBox  IsChecked="{Binding IsSelected}" Grid.Column="0" />
+                                                    <TextBlock Text="{Binding MaszynaParam.nazwa}" Grid.Column="1"
+                           FontWeight="Bold" Foreground="Navy"/>
+                                                </Grid>
+                                            </StackPanel>
+
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+
+                                <ListBox ItemsSource="{Binding Path=ProdukcjaMaszynaParametrSelectedItem.WartosciVM }" 
+                                         Grid.Column="0" Grid.Row="1"
+                
+                                         ItemTemplateSelector="{StaticResource templateSelector}"
+                                        
+                                         ScrollViewer.HorizontalScrollBarVisibility="Visible" 
+                                     ScrollViewer.VerticalScrollBarVisibility="Visible"  VerticalAlignment="Top" Height="193" Margin="0,0,0,0"
+                                         
+                 />
+
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Grid.Row="1" Grid.ColumnSpan="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Content="Opis:" />
+                                <TextBox Grid.Row="1"  Grid.Column="0" Width="auto" Height="80" Text="{Binding ProdukcjaInfo.Produkcja.opis_produkcja, Mode=TwoWay}" TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+                                <Label Grid.Row="2" Grid.Column="0" Content="Koszty pozostałe:" />
+                                <TextBox Grid.Row="3" Grid.Column="2" Width="150" HorizontalAlignment="Left" Text="{Binding ProdukcjaInfo.Produkcja.koszty_pozostale, Mode=TwoWay,  StringFormat=N2}" />
+                            </Grid>
+
+                        </GroupBox>
+                    </Grid>
+
+                </TabItem>
+                <TabItem Header="Monitorowanie">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <ListView Grid.Row="0" x:Name="listViewMaszyny" ItemsSource="{Binding Maszyny, Mode=TwoWay}" 
+                                  SelectedItem="{Binding MaszynaSel, Mode=TwoWay}" 
+                                  HorizontalContentAlignment="Stretch" SelectionMode="Single">
+                            <ListView.View>
+                                <GridView>
+
+                                    <GridViewColumn Width="450"  Header="Maszyna" DisplayMemberBinding="{Binding MaszynaPW.nazwa_maszyny}"  />
+                                    <GridViewColumn Width="50" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button Content="Wstaw Monit" Command="{Binding Path=DataContext.DodajMaszynaMonitCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding}" />
+
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        <ListView Grid.Row="1" x:Name="listView25"  ItemsSource="{Binding MaszynaSel.Monits, Mode=TwoWay}"  >
+                            <ListView.View>
+                                <GridView>
+                                    <GridViewColumn Width="50" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button Content="Edytuj" Command="{Binding Path=DataContext.EdytujMaszynaMonitCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}" CommandParameter="{Binding}" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Width="50" >
+                                        <GridViewColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Button Content="Usun" Command="{Binding Path=DataContext.UsunMaszynaMonitCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}" IsEnabled="{Binding IsCanSave}" CommandParameter="{Binding}" />
+                                            </DataTemplate>
+                                        </GridViewColumn.CellTemplate>
+                                    </GridViewColumn>
+                                    <GridViewColumn Header="Data start" Width="80" DisplayMemberBinding="{Binding  MaszynaMonit.rozpoczecie_data, StringFormat=d}"/>
+                                    <GridViewColumn Header="Godzina start" Width="50"  DisplayMemberBinding="{Binding  MaszynaMonit.rozpoczecie_godzina}"/>
+                                    <GridViewColumn Header="Data stop" Width="80" DisplayMemberBinding="{Binding  MaszynaMonit.zakonczenie_data, StringFormat=d}"/>
+                                    <GridViewColumn Header="Godzina stop" Width="50"  DisplayMemberBinding="{Binding  MaszynaMonit.zakonczenie_godzina}"/>
+                                    <GridViewColumn Header="Parametr" Width="200"  DisplayMemberBinding="{Binding  MaszynaMonit.param_nazwa}"/>
+                                    <GridViewColumn Header="Wartość" Width="150" DisplayMemberBinding="{Binding  MaszynaMonit.param_wart}"/>
+                                    <GridViewColumn Header="Frakcja" Width="150" DisplayMemberBinding="{Binding  MaszynaMonit.frakcja}"/>
+                                    <GridViewColumn Header="osoba" Width="150" DisplayMemberBinding="{Binding  MaszynaMonit.uzytkownik}" />
+                                    <GridViewColumn Header="uwagi" Width="150" DisplayMemberBinding="{Binding  MaszynaMonit.uwagi}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Odpady">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="1" Margin="5">Odpady</Label>
+                        <DataGrid Grid.Row="1" Grid.Column="1" Margin="5,5,5,-93"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Informacje">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Uwagi:"  />
+                        <TextBox x:Name="EditBox" Text="{Binding Path=ProdukcjaInfo.Produkcja.uwagi, Mode=TwoWay}" Grid.Row="1" Margin="10,11,10,-212"  Grid.ColumnSpan="2" TextWrapping="Wrap" />
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Rozliczenie Produkcji">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"  />
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Column="0" Grid.Row="0" Content="{Binding RozliczenieView}" VerticalAlignment="Top" Margin="0 10 0 0" />
+                    </Grid>
+
+                </TabItem>
+                <TabItem Header="Symulacja Produkcji">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"  />
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Column="0" Grid.Row="0" Content="{Binding SymulacjaView}" VerticalAlignment="Top" Margin="0 10 0 0" />
+                    </Grid>
+
+                </TabItem>
+
+            </TabControl>
+        </GroupBox>
+        <Button x:Name="buttonRaport" Content="Raport" Margin="844,675,0,0" Command="{Binding RaportCommand}" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="93" />
+        <Button x:Name="buttonRaportMG" Content="Raport MG" Margin="741,675,0,0" Command="{Binding RaportMGCommand}" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="93" />
+        <Button x:Name="button" Content="Zapisz" Margin="912,13,0,0" VerticalAlignment="Top" Command="{Binding zapiszCommand}" IsEnabled="{Binding IsCanSave}" HorizontalAlignment="Left" Width="113" Click="button_Click" />
+        <Button x:Name="button1" Content="Anuluj" Margin="786,13,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="117"  />
+        <Label x:Name="label" Content="Numer zlecenia:" Margin="10,23,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Right" HorizontalAlignment="Left"/>
+        <TextBox x:Name="numer"  HorizontalAlignment="Left" Height="23" Margin="125,28,0,0" TextWrapping="Wrap"  Text="{Binding ProdukcjaInfo.Produkcja.nazwa, Mode=OneWay}" VerticalAlignment="Top" Width="183" FontWeight="Bold" Background="White" IsReadOnly="True"/>
+        <TextBox x:Name="id"  HorizontalAlignment="Left" Height="23" Margin="371,28,0,0" TextWrapping="Wrap"  Text="{Binding ProdukcjaInfo.Produkcja.id, Mode=OneWay}" VerticalAlignment="Top" Width="50" FontWeight="Bold" Background="White" IsReadOnly="True"/>
+        <CheckBox x:Name="checkBox2" Content="Zatwierdzone" Command="{Binding CheckCommand, Mode=TwoWay}" IsChecked="{Binding IsChecked, Mode=TwoWay}"   HorizontalAlignment="Left" VerticalAlignment="Top" Width="188" Margin="466,11,0,0" />
+        <Button x:Name="buttonRaport_Copy" Content="Zlecenie" Margin="642,675,362,0" Command="{Binding ZlecenieCommand}" Height="20" VerticalAlignment="Top" />
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,964 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="report1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="report1.ReportResourceString" xml:space="preserve">
+    <value>﻿&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;Report ScriptLanguage="CSharp" ReportInfo.Created="10/11/2017 14:21:56" ReportInfo.Modified="04/05/2021 13:19:02" ReportInfo.CreatorVersion="2014.1.2.0"&gt;
+  &lt;Dictionary&gt;
+    &lt;TableDataSource Name="FIRMA" ReferenceName="fzlDataSet1.FIRMA" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa_pelna" DataType="System.String"/&gt;
+      &lt;Column Name="nip" DataType="System.String"/&gt;
+      &lt;Column Name="regon" DataType="System.String"/&gt;
+      &lt;Column Name="ulica" DataType="System.String"/&gt;
+      &lt;Column Name="numer_dom" DataType="System.String"/&gt;
+      &lt;Column Name="numer_lokal" DataType="System.String"/&gt;
+      &lt;Column Name="kod_pocztowy" DataType="System.String"/&gt;
+      &lt;Column Name="miejscowosc" DataType="System.String"/&gt;
+      &lt;Column Name="kraj" DataType="System.String"/&gt;
+      &lt;Column Name="tel" DataType="System.String"/&gt;
+      &lt;Column Name="fax" DataType="System.String"/&gt;
+      &lt;Column Name="www" DataType="System.String"/&gt;
+      &lt;Column Name="email" DataType="System.String"/&gt;
+      &lt;Column Name="domyslna_lab" DataType="System.Byte"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="GS1_CONFIG" ReferenceName="fzlDataSet1.GS1_CONFIG" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="nr_jednostki" DataType="System.String"/&gt;
+      &lt;Column Name="nr_jednostki_globalny" DataType="System.String"/&gt;
+      &lt;Column Name="cyfra_ rozszerzajaca" DataType="System.Byte"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="GS1_KODY" ReferenceName="fzlDataSet1.GS1_KODY" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_prod_dp_monit" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod_tw" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa_tw" DataType="System.String"/&gt;
+      &lt;Column Name="nr_partii" DataType="System.String"/&gt;
+      &lt;Column Name="nr_getin" DataType="System.String"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa_opakowania" DataType="System.String"/&gt;
+      &lt;Column Name="ilosc_opakowania" DataType="System.Double"/&gt;
+      &lt;Column Name="waga_netto" DataType="System.Double"/&gt;
+      &lt;Column Name="seria_nr" DataType="System.Int32"/&gt;
+      &lt;Column Name="waga_opakowania" DataType="System.Double"/&gt;
+      &lt;Column Name="sscc" DataType="System.String"/&gt;
+      &lt;Column Name="sscc_pelny" DataType="System.String"/&gt;
+      &lt;Column Name="cyfra_kontrolna" DataType="System.String"/&gt;
+      &lt;Column Name="termin" DataType="System.DateTime"/&gt;
+      &lt;Column Name="waga_brutto" DataType="System.Double"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="HMMG" ReferenceName="fzlDataSet1.HMMG" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="hmid" DataType="System.Int32"/&gt;
+      &lt;Column Name="flag" DataType="System.Int16"/&gt;
+      &lt;Column Name="subtypi" DataType="System.Int16"/&gt;
+      &lt;Column Name="typi" DataType="System.Int16"/&gt;
+      &lt;Column Name="znaczniki" DataType="System.Int16"/&gt;
+      &lt;Column Name="rodzaj" DataType="System.Int32"/&gt;
+      &lt;Column Name="katalog" DataType="System.Int32"/&gt;
+      &lt;Column Name="info" DataType="System.String"/&gt;
+      &lt;Column Name="osoba" DataType="System.String"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="seria" DataType="System.String"/&gt;
+      &lt;Column Name="serianr" DataType="System.Int32"/&gt;
+      &lt;Column Name="okres" DataType="System.Int16"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="datasp" DataType="System.DateTime"/&gt;
+      &lt;Column Name="opis" DataType="System.String"/&gt;
+      &lt;Column Name="khid" DataType="System.Int32"/&gt;
+      &lt;Column Name="khkod" DataType="System.String"/&gt;
+      &lt;Column Name="khnazwa" DataType="System.String"/&gt;
+      &lt;Column Name="khadres" DataType="System.String"/&gt;
+      &lt;Column Name="khdom" DataType="System.String"/&gt;
+      &lt;Column Name="khlokal" DataType="System.String"/&gt;
+      &lt;Column Name="khmiasto" DataType="System.String"/&gt;
+      &lt;Column Name="khkodpocz" DataType="System.String"/&gt;
+      &lt;Column Name="khnip" DataType="System.String"/&gt;
+      &lt;Column Name="ok" DataType="System.Byte"/&gt;
+      &lt;Column Name="puste" DataType="System.Byte"/&gt;
+      &lt;Column Name="termin" DataType="System.DateTime"/&gt;
+      &lt;Column Name="netto" DataType="System.Double"/&gt;
+      &lt;Column Name="odebrane" DataType="System.String"/&gt;
+      &lt;Column Name="typ_dk" DataType="System.String"/&gt;
+      &lt;Column Name="grupaceni" DataType="System.Int16"/&gt;
+      &lt;Column Name="rejestrVati" DataType="System.Int16"/&gt;
+      &lt;Column Name="iddokkoryg" DataType="System.Int32"/&gt;
+      &lt;Column Name="idkorekt" DataType="System.Int32"/&gt;
+      &lt;Column Name="exp_fki" DataType="System.Int16"/&gt;
+      &lt;Column Name="statusFK" DataType="System.Int16"/&gt;
+      &lt;Column Name="wartoscWz" DataType="System.Double"/&gt;
+      &lt;Column Name="magazyn" DataType="System.Int16"/&gt;
+      &lt;Column Name="idhandl" DataType="System.Int32"/&gt;
+      &lt;Column Name="dzial" DataType="System.Int16"/&gt;
+      &lt;Column Name="przychod" DataType="System.Double"/&gt;
+      &lt;Column Name="rozchod" DataType="System.Double"/&gt;
+      &lt;Column Name="wartk" DataType="System.Double"/&gt;
+      &lt;Column Name="schemat" DataType="System.String"/&gt;
+      &lt;Column Name="zapas" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="HMMZ" ReferenceName="fzlDataSet1.HMMZ" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="hmid" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_hmmg" DataType="System.Int32"/&gt;
+      &lt;Column Name="flag" DataType="System.Int16"/&gt;
+      &lt;Column Name="subtypi" DataType="System.Int16"/&gt;
+      &lt;Column Name="typi" DataType="System.Int16"/&gt;
+      &lt;Column Name="super" DataType="System.Int32"/&gt;
+      &lt;Column Name="lp" DataType="System.Int16"/&gt;
+      &lt;Column Name="idkh" DataType="System.Int32"/&gt;
+      &lt;Column Name="idtw" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="opis" DataType="System.String"/&gt;
+      &lt;Column Name="opisdod" DataType="System.String"/&gt;
+      &lt;Column Name="ilosc" DataType="System.Double"/&gt;
+      &lt;Column Name="jm" DataType="System.String"/&gt;
+      &lt;Column Name="grupaceni" DataType="System.Int16"/&gt;
+      &lt;Column Name="cena" DataType="System.Double"/&gt;
+      &lt;Column Name="wartNetto" DataType="System.Double"/&gt;
+      &lt;Column Name="idpozkoryg" DataType="System.Int32"/&gt;
+      &lt;Column Name="rejestri" DataType="System.Int16"/&gt;
+      &lt;Column Name="idlongname" DataType="System.Int32"/&gt;
+      &lt;Column Name="magazyn" DataType="System.Int16"/&gt;
+      &lt;Column Name="iloscjedn" DataType="System.Double"/&gt;
+      &lt;Column Name="wartTowaru" DataType="System.Double"/&gt;
+      &lt;Column Name="osoba" DataType="System.String"/&gt;
+      &lt;Column Name="iloscwp" DataType="System.Double"/&gt;
+      &lt;Column Name="idhandl" DataType="System.Int32"/&gt;
+      &lt;Column Name="iloscdorozl" DataType="System.Double"/&gt;
+      &lt;Column Name="przychod" DataType="System.Double"/&gt;
+      &lt;Column Name="rozchod" DataType="System.Double"/&gt;
+      &lt;Column Name="wartk" DataType="System.Double"/&gt;
+      &lt;Column Name="lwartki" DataType="System.Int16"/&gt;
+      &lt;Column Name="schemat" DataType="System.String"/&gt;
+      &lt;Column Name="jmwp" DataType="System.String"/&gt;
+      &lt;Column Name="zapas" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="KH" ReferenceName="fzlDataSet1.KH" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int64"/&gt;
+      &lt;Column Name="zew_id" DataType="System.Int64"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="guid" DataType="System.Int32"/&gt;
+      &lt;Column Name="flag" DataType="System.Int32"/&gt;
+      &lt;Column Name="subtyp" DataType="System.Int32"/&gt;
+      &lt;Column Name="znacznik" DataType="System.String"/&gt;
+      &lt;Column Name="info" DataType="System.String"/&gt;
+      &lt;Column Name="osoba" DataType="System.String"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="miejscowosc" DataType="System.String"/&gt;
+      &lt;Column Name="ulica" DataType="System.String"/&gt;
+      &lt;Column Name="dom" DataType="System.String"/&gt;
+      &lt;Column Name="lokal" DataType="System.String"/&gt;
+      &lt;Column Name="kodpocz" DataType="System.String"/&gt;
+      &lt;Column Name="rejon" DataType="System.String"/&gt;
+      &lt;Column Name="nip" DataType="System.String"/&gt;
+      &lt;Column Name="statusUE" DataType="System.String"/&gt;
+      &lt;Column Name="regon" DataType="System.String"/&gt;
+      &lt;Column Name="pesel" DataType="System.String"/&gt;
+      &lt;Column Name="osfiz" DataType="System.String"/&gt;
+      &lt;Column Name="tel1" DataType="System.String"/&gt;
+      &lt;Column Name="tel2" DataType="System.String"/&gt;
+      &lt;Column Name="fax" DataType="System.String"/&gt;
+      &lt;Column Name="email" DataType="System.String"/&gt;
+      &lt;Column Name="www" DataType="System.String"/&gt;
+      &lt;Column Name="naglowek" DataType="System.String"/&gt;
+      &lt;Column Name="nazwisko" DataType="System.String"/&gt;
+      &lt;Column Name="imie" DataType="System.String"/&gt;
+      &lt;Column Name="bnazwa" DataType="System.String"/&gt;
+      &lt;Column Name="bkonto" DataType="System.String"/&gt;
+      &lt;Column Name="negoc" DataType="System.String"/&gt;
+      &lt;Column Name="grupacen" DataType="System.String"/&gt;
+      &lt;Column Name="typks" DataType="System.String"/&gt;
+      &lt;Column Name="typ_naliczania" DataType="System.String"/&gt;
+      &lt;Column Name="typ_ceny" DataType="System.String"/&gt;
+      &lt;Column Name="upust" DataType="System.Decimal"/&gt;
+      &lt;Column Name="limit" DataType="System.Int32"/&gt;
+      &lt;Column Name="limitkwota" DataType="System.Decimal"/&gt;
+      &lt;Column Name="limitwaluta" DataType="System.Decimal"/&gt;
+      &lt;Column Name="rejestr_platnosci" DataType="System.String"/&gt;
+      &lt;Column Name="forma_platnosci" DataType="System.String"/&gt;
+      &lt;Column Name="stanpl" DataType="System.Decimal"/&gt;
+      &lt;Column Name="stannl" DataType="System.Decimal"/&gt;
+      &lt;Column Name="khfk" DataType="System.String"/&gt;
+      &lt;Column Name="zapas" DataType="System.String"/&gt;
+      &lt;Column Name="krajKod" DataType="System.String"/&gt;
+      &lt;Column Name="krajNazwa" DataType="System.String"/&gt;
+      &lt;Column Name="aktywny" DataType="System.Int32"/&gt;
+      &lt;Column Name="NazwaRodzaju" DataType="System.String"/&gt;
+      &lt;Column Name="poledod1" DataType="System.String"/&gt;
+      &lt;Column Name="poledod2" DataType="System.String"/&gt;
+      &lt;Column Name="poledod3" DataType="System.String"/&gt;
+      &lt;Column Name="poledod4" DataType="System.String"/&gt;
+      &lt;Column Name="poledod5" DataType="System.String"/&gt;
+      &lt;Column Name="poledod6" DataType="System.String"/&gt;
+      &lt;Column Name="poledod7" DataType="System.String"/&gt;
+      &lt;Column Name="notatka" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PARTIE_FK" ReferenceName="fzlDataSet1.PARTIE_FK" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_partii" DataType="System.Int32"/&gt;
+      &lt;Column Name="nr_partii" DataType="System.String"/&gt;
+      &lt;Column Name="iddk_lab" DataType="System.Int32"/&gt;
+      &lt;Column Name="idpoz_lab" DataType="System.Int32"/&gt;
+      &lt;Column Name="koddk_fki" DataType="System.String"/&gt;
+      &lt;Column Name="iddk_fki" DataType="System.Int32"/&gt;
+      &lt;Column Name="idpoz_fki" DataType="System.Int32"/&gt;
+      &lt;Column Name="idtw_fki" DataType="System.Int32"/&gt;
+      &lt;Column Name="twopis" DataType="System.String"/&gt;
+      &lt;Column Name="ilosc" DataType="System.Double"/&gt;
+      &lt;Column Name="jm" DataType="System.String"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="typ_dk" DataType="System.String"/&gt;
+      &lt;Column Name="dataop" DataType="System.DateTime"/&gt;
+      &lt;Column Name="osoba" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PLACE" ReferenceName="fzlDataSet1.PLACE" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="numer" DataType="System.String"/&gt;
+      &lt;Column Name="mc_bazowy" DataType="System.DateTime"/&gt;
+      &lt;Column Name="mc_podatkowy" DataType="System.DateTime"/&gt;
+      &lt;Column Name="mc_zus" DataType="System.DateTime"/&gt;
+      &lt;Column Name="dz_wyplaty" DataType="System.DateTime"/&gt;
+      &lt;Column Name="data_od" DataType="System.DateTime"/&gt;
+      &lt;Column Name="data_do" DataType="System.DateTime"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="data_utworzenia" DataType="System.DateTime"/&gt;
+      &lt;Column Name="data_modyfikacji" DataType="System.DateTime"/&gt;
+      &lt;Column Name="laczna_kwota" DataType="System.Single"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PLACE_PRACOWNICY" ReferenceName="fzlDataSet1.PLACE_PRACOWNICY" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_pracownika" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_listy" DataType="System.Int32"/&gt;
+      &lt;Column Name="kwota_brutto" DataType="System.Single"/&gt;
+      &lt;Column Name="kwota_netto" DataType="System.Single"/&gt;
+      &lt;Column Name="do_wyplaty" DataType="System.Single"/&gt;
+      &lt;Column Name="numer_konta" DataType="System.String"/&gt;
+      &lt;Column Name="tytulem" DataType="System.String"/&gt;
+      &lt;Column Name="uwagi" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PRACOWNICY" ReferenceName="fzlDataSet1.PRACOWNICY" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="imie" DataType="System.String"/&gt;
+      &lt;Column Name="drugie_imie" DataType="System.String"/&gt;
+      &lt;Column Name="nazwisko" DataType="System.String"/&gt;
+      &lt;Column Name="data_ur" DataType="System.DateTime"/&gt;
+      &lt;Column Name="pesel" DataType="System.String"/&gt;
+      &lt;Column Name="nip" DataType="System.String"/&gt;
+      &lt;Column Name="numer_ewidencyjny" DataType="System.String"/&gt;
+      &lt;Column Name="numer_konta" DataType="System.String"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="ulica" DataType="System.String"/&gt;
+      &lt;Column Name="nr_domu" DataType="System.String"/&gt;
+      &lt;Column Name="nr_lokalu" DataType="System.String"/&gt;
+      &lt;Column Name="kod_pocztowy" DataType="System.String"/&gt;
+      &lt;Column Name="miejscowosc" DataType="System.String"/&gt;
+      &lt;Column Name="tel" DataType="System.String"/&gt;
+      &lt;Column Name="email" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD" ReferenceName="fzlDataSet1.PROD" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="datadk" DataType="System.DateTime"/&gt;
+      &lt;Column Name="dataprod" DataType="System.DateTime"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="osoba" DataType="System.String"/&gt;
+      &lt;Column Name="khid" DataType="System.Int32"/&gt;
+      &lt;Column Name="khkod" DataType="System.String"/&gt;
+      &lt;Column Name="khnazwa" DataType="System.String"/&gt;
+      &lt;Column Name="khadres" DataType="System.String"/&gt;
+      &lt;Column Name="khdom" DataType="System.String"/&gt;
+      &lt;Column Name="khlokal" DataType="System.String"/&gt;
+      &lt;Column Name="khmiasto" DataType="System.String"/&gt;
+      &lt;Column Name="khkodpocz" DataType="System.String"/&gt;
+      &lt;Column Name="khnip" DataType="System.String"/&gt;
+      &lt;Column Name="osoba1" DataType="System.String"/&gt;
+      &lt;Column Name="osoba2" DataType="System.String"/&gt;
+      &lt;Column Name="osoba3" DataType="System.String"/&gt;
+      &lt;Column Name="inneosoby" DataType="System.String"/&gt;
+      &lt;Column Name="utworzono" DataType="System.DateTime"/&gt;
+      &lt;Column Name="modyfikacja" DataType="System.DateTime"/&gt;
+      &lt;Column Name="ilosc_surowcow" DataType="System.Single"/&gt;
+      &lt;Column Name="ilosc_odpadow" DataType="System.Single"/&gt;
+      &lt;Column Name="ilosc_wyrobu_got" DataType="System.Single"/&gt;
+      &lt;Column Name="jm" DataType="System.String"/&gt;
+      &lt;Column Name="id_rw" DataType="System.Int32"/&gt;
+      &lt;Column Name="waluta" DataType="System.String"/&gt;
+      &lt;Column Name="kurs" DataType="System.Double"/&gt;
+      &lt;Column Name="wskaznik" DataType="System.Double"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="osobne_pw" DataType="System.Byte"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="serial" DataType="System.Int32"/&gt;
+      &lt;Column Name="okres" DataType="System.Int32"/&gt;
+      &lt;Column Name="typ" DataType="System.Byte"/&gt;
+      &lt;Column Name="zakonczono" DataType="System.Byte"/&gt;
+      &lt;Column Name="akceptowano" DataType="System.Byte"/&gt;
+      &lt;Column Name="opis" DataType="System.String"/&gt;
+      &lt;Column Name="opis_wg" DataType="System.String"/&gt;
+      &lt;Column Name="exp_hm" DataType="System.Byte"/&gt;
+      &lt;Column Name="wart_rw" DataType="System.Double"/&gt;
+      &lt;Column Name="wart_pw" DataType="System.Double"/&gt;
+      &lt;Column Name="status" DataType="System.Byte"/&gt;
+      &lt;Column Name="uwagi" DataType="System.String"/&gt;
+      &lt;Column Name="czesciowa" DataType="System.Byte"/&gt;
+      &lt;Column Name="termin_rozpoczecia" DataType="System.DateTime"/&gt;
+      &lt;Column Name="termin_zakonczenia" DataType="System.DateTime"/&gt;
+      &lt;Column Name="zerowa" DataType="System.Byte"/&gt;
+      &lt;Column Name="opis_surowce" DataType="System.String"/&gt;
+      &lt;Column Name="opis_produkcja" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_HMDW" ReferenceName="fzlDataSet1.PROD_HMDW" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_fk" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="typi" DataType="System.Byte"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="iddw" DataType="System.Int32"/&gt;
+      &lt;Column Name="iddkpz" DataType="System.Int32"/&gt;
+      &lt;Column Name="idkh" DataType="System.Int32"/&gt;
+      &lt;Column Name="khnazwa" DataType="System.String"/&gt;
+      &lt;Column Name="khkod" DataType="System.String"/&gt;
+      &lt;Column Name="iddkzk" DataType="System.Int32"/&gt;
+      &lt;Column Name="numer" DataType="System.Int32"/&gt;
+      &lt;Column Name="idtw" DataType="System.Int32"/&gt;
+      &lt;Column Name="kodtw" DataType="System.String"/&gt;
+      &lt;Column Name="opistw" DataType="System.String"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="ilosc" DataType="System.Double"/&gt;
+      &lt;Column Name="iloscdoprod" DataType="System.Double"/&gt;
+      &lt;Column Name="iloscdosp" DataType="System.Double"/&gt;
+      &lt;Column Name="cena" DataType="System.Double"/&gt;
+      &lt;Column Name="wartoscdosp" DataType="System.Double"/&gt;
+      &lt;Column Name="magazyn" DataType="System.Byte"/&gt;
+      &lt;Column Name="iloscpz" DataType="System.Double"/&gt;
+      &lt;Column Name="stan" DataType="System.Double"/&gt;
+      &lt;Column Name="wartoscst" DataType="System.Double"/&gt;
+      &lt;Column Name="zapas" DataType="System.String"/&gt;
+      &lt;Column Name="utowrzono" DataType="System.DateTime"/&gt;
+      &lt;Column Name="modyfikowano" DataType="System.DateTime"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_HMTW" ReferenceName="fzlDataSet1.PROD_HMTW" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="id_fk" DataType="System.Int32"/&gt;
+      &lt;Column Name="flag" DataType="System.Int32"/&gt;
+      &lt;Column Name="subtypi" DataType="System.Int32"/&gt;
+      &lt;Column Name="znaczniki" DataType="System.Int32"/&gt;
+      &lt;Column Name="rodzaj" DataType="System.Int32"/&gt;
+      &lt;Column Name="katalog" DataType="System.Int32"/&gt;
+      &lt;Column Name="info" DataType="System.String"/&gt;
+      &lt;Column Name="osoba" DataType="System.String"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="kodpaskowy" DataType="System.String"/&gt;
+      &lt;Column Name="vatspi" DataType="System.Int32"/&gt;
+      &lt;Column Name="stan" DataType="System.Double"/&gt;
+      &lt;Column Name="jm" DataType="System.String"/&gt;
+      &lt;Column Name="utorzono" DataType="System.DateTime"/&gt;
+      &lt;Column Name="modyfikowano" DataType="System.DateTime"/&gt;
+      &lt;Column Name="numer_gtin" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_LINIE" ReferenceName="fzlDataSet1.PROD_LINIE" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa_procesu" DataType="System.String"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_LINIE_MASZYNY" ReferenceName="fzlDataSet1.PROD_LINIE_MASZYNY" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_lini" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_maszyny" DataType="System.Int32"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_LINIE_PARAM" ReferenceName="fzlDataSet1.PROD_LINIE_PARAM" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_lini" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="aktywny" DataType="System.Byte"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_LINIE_PARAM_WART" ReferenceName="fzlDataSet1.PROD_LINIE_PARAM_WART" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_prod" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_param" DataType="System.Int32"/&gt;
+      &lt;Column Name="wart" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_LINIE_PW" ReferenceName="fzlDataSet1.PROD_LINIE_PW" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_prod" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_lini" DataType="System.Int32"/&gt;
+      &lt;Column Name="lp" DataType="System.Int32"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa_procesu" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_MASZYNY" ReferenceName="fzlDataSet1.PROD_MASZYNY" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="producent" DataType="System.String"/&gt;
+      &lt;Column Name="data_produkcji" DataType="System.DateTime"/&gt;
+      &lt;Column Name="data_przegladu" DataType="System.DateTime"/&gt;
+      &lt;Column Name="waznosc_przegladu" DataType="System.DateTime"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="mocKW" DataType="System.Double"/&gt;
+      &lt;Column Name="aktywna" DataType="System.Byte"/&gt;
+      &lt;Column Name="czynnosci" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_MASZYNY_MONIT" ReferenceName="fzlDataSet1.PROD_MASZYNY_MONIT" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_prod" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_prod_maszyny_pw" DataType="System.Int32"/&gt;
+      &lt;Column Name="param_nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="param_wart" DataType="System.String"/&gt;
+      &lt;Column Name="id_param" DataType="System.Int32"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="czas" DataType="System.String"/&gt;
+      &lt;Column Name="uzytkownik" DataType="System.String"/&gt;
+      &lt;Column Name="utworzono" DataType="System.DateTime"/&gt;
+      &lt;Column Name="frakcja" DataType="System.String"/&gt;
+      &lt;Column Name="uwagi" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_MASZYNY_PARAM" ReferenceName="fzlDataSet1.PROD_MASZYNY_PARAM" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_maszyny" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="typ" DataType="System.Byte"/&gt;
+      &lt;Column Name="parametr" DataType="System.String"/&gt;
+      &lt;Column Name="parametr_type" DataType="System.String"/&gt;
+      &lt;Column Name="czy_monit" DataType="System.Byte"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_MASZYNY_PARAM_DEF" ReferenceName="fzlDataSet1.PROD_MASZYNY_PARAM_DEF" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_param" DataType="System.Int32"/&gt;
+      &lt;Column Name="domyslnie" DataType="System.Byte"/&gt;
+      &lt;Column Name="wartosc" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_MASZYNY_PARAM_WART" ReferenceName="fzlDataSet1.PROD_MASZYNY_PARAM_WART" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_prod" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_param" DataType="System.Int32"/&gt;
+      &lt;Column Name="wart" DataType="System.String"/&gt;
+      &lt;Column Name="lp" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_prod_maszyny_pw" DataType="System.Int32"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_MASZYNY_PW" ReferenceName="fzlDataSet1.PROD_MASZYNY_PW" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_prod" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_prod_linie" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_maszyny" DataType="System.Int32"/&gt;
+      &lt;Column Name="nazwa_maszyny" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_MG" ReferenceName="fzlDataSet1.PROD_MG" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="khid" DataType="System.Int32"/&gt;
+      &lt;Column Name="khnazwa" DataType="System.String"/&gt;
+      &lt;Column Name="khkod" DataType="System.String"/&gt;
+      &lt;Column Name="khadres" DataType="System.String"/&gt;
+      &lt;Column Name="khdom" DataType="System.String"/&gt;
+      &lt;Column Name="khlokal" DataType="System.String"/&gt;
+      &lt;Column Name="khmiasto" DataType="System.String"/&gt;
+      &lt;Column Name="khkodpocz" DataType="System.String"/&gt;
+      &lt;Column Name="khnip" DataType="System.String"/&gt;
+      &lt;Column Name="osoba" DataType="System.String"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="termin" DataType="System.DateTime"/&gt;
+      &lt;Column Name="typ_dk" DataType="System.String"/&gt;
+      &lt;Column Name="exp_fki" DataType="System.Byte"/&gt;
+      &lt;Column Name="id_handl" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod_handl" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_PW" ReferenceName="fzlDataSet1.PROD_PW" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_prod" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_proddp" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_proddw" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_dwfk" DataType="System.Int32"/&gt;
+      &lt;Column Name="ilosc" DataType="System.Double"/&gt;
+      &lt;Column Name="wartosc" DataType="System.Double"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="zapas" DataType="System.String"/&gt;
+      &lt;Column Name="id_mzfk" DataType="System.Int32"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PROD_ZL" ReferenceName="fzlDataSet1.PROD_ZL" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id1" DataType="System.Int32"/&gt;
+      &lt;Column Name="id2" DataType="System.Int32"/&gt;
+      &lt;Column Name="opis" DataType="System.String"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="osoba" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PRODCONF" ReferenceName="fzlDataSet1.PRODCONF" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="wartosc" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PRODDK" ReferenceName="fzlDataSet1.PRODDK" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_dk" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_prod" DataType="System.Int32"/&gt;
+      &lt;Column Name="ilosc_odpad" DataType="System.Single"/&gt;
+      &lt;Column Name="tabela" DataType="System.String"/&gt;
+      &lt;Column Name="typ_dk" DataType="System.String"/&gt;
+      &lt;Column Name="kod_dk" DataType="System.String"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PRODDP" ReferenceName="fzlDataSet1.PRODDP" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="id_proddk" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_prod" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_poz" DataType="System.Int32"/&gt;
+      &lt;Column Name="lp" DataType="System.Int32"/&gt;
+      &lt;Column Name="idtw" DataType="System.Int32"/&gt;
+      &lt;Column Name="kodtw" DataType="System.String"/&gt;
+      &lt;Column Name="khnazwa" DataType="System.String"/&gt;
+      &lt;Column Name="nazwatw" DataType="System.String"/&gt;
+      &lt;Column Name="ilosc" DataType="System.Double"/&gt;
+      &lt;Column Name="jm" DataType="System.String"/&gt;
+      &lt;Column Name="cena" DataType="System.Double"/&gt;
+      &lt;Column Name="planowana_cena" DataType="System.Double"/&gt;
+      &lt;Column Name="wartosc" DataType="System.Double"/&gt;
+      &lt;Column Name="wskaznik" DataType="System.Double"/&gt;
+      &lt;Column Name="kurs" DataType="System.Double"/&gt;
+      &lt;Column Name="data_kursu" DataType="System.DateTime"/&gt;
+      &lt;Column Name="waluta" DataType="System.String"/&gt;
+      &lt;Column Name="opis" DataType="System.String"/&gt;
+      &lt;Column Name="iddw" DataType="System.Int32"/&gt;
+      &lt;Column Name="idproddw" DataType="System.Int32"/&gt;
+      &lt;Column Name="koddw" DataType="System.String"/&gt;
+      &lt;Column Name="nr_partii" DataType="System.String"/&gt;
+      &lt;Column Name="id_partii" DataType="System.Int32"/&gt;
+      &lt;Column Name="frakcja" DataType="System.String"/&gt;
+      &lt;Column Name="rodzaj_dk" DataType="System.String"/&gt;
+      &lt;Column Name="id_hm" DataType="System.Int32"/&gt;
+      &lt;Column Name="ztw" DataType="System.Byte"/&gt;
+      &lt;Column Name="wilgotnosc" DataType="System.Double"/&gt;
+      &lt;Column Name="czystosc" DataType="System.Double"/&gt;
+      &lt;Column Name="rozkruszek" DataType="System.Byte"/&gt;
+      &lt;Column Name="kodpaskowy" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PRODDP_MONIT" ReferenceName="fzlDataSet1.PRODDP_MONIT" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_proddp" DataType="System.Int32"/&gt;
+      &lt;Column Name="kodtw" DataType="System.String"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="godzina" DataType="System.String"/&gt;
+      &lt;Column Name="ilosc" DataType="System.Double"/&gt;
+      &lt;Column Name="ilewopakowaniu" DataType="System.Double"/&gt;
+      &lt;Column Name="id_opakowania" DataType="System.Int32"/&gt;
+      &lt;Column Name="opakowanie_nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="ilosc_opakowania" DataType="System.Double"/&gt;
+      &lt;Column Name="waga_opakowania" DataType="System.Double"/&gt;
+      &lt;Column Name="id_opakowania2" DataType="System.Int32"/&gt;
+      &lt;Column Name="opakowanie_nazwa2" DataType="System.String"/&gt;
+      &lt;Column Name="ilosc_opakowania2" DataType="System.Double"/&gt;
+      &lt;Column Name="waga_opakowania_2" DataType="System.Double"/&gt;
+      &lt;Column Name="id_miejsca_skladowania" DataType="System.Int32"/&gt;
+      &lt;Column Name="miejsce_skladowania" DataType="System.String"/&gt;
+      &lt;Column Name="oznaczenie" DataType="System.String"/&gt;
+      &lt;Column Name="termin_przydatnosci" DataType="System.DateTime"/&gt;
+      &lt;Column Name="lp" DataType="System.Int16"/&gt;
+      &lt;Column Name="id_opakowania_rodzaje" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_opakowania_rodzaje2" DataType="System.Int32"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PRODPARAM" ReferenceName="fzlDataSet1.PRODPARAM" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa_grupy" DataType="System.String"/&gt;
+      &lt;Column Name="czy_wart_licz" DataType="System.Byte"/&gt;
+      &lt;Column Name="uwagi" DataType="System.String"/&gt;
+      &lt;Column Name="id_grupy" DataType="System.Int32"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PRODPARAM_GRUPY" ReferenceName="fzlDataSet1.PRODPARAM_GRUPY" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="uwagi" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="PRODPARAM_WART" ReferenceName="fzlDataSet1.PRODPARAM_WART" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id_prod" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_param" DataType="System.Int32"/&gt;
+      &lt;Column Name="wartosc_licz" DataType="System.Single"/&gt;
+      &lt;Column Name="wartosc_txt" DataType="System.String"/&gt;
+      &lt;Column Name="wart" DataType="System.Int32"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="SUROWCE" ReferenceName="fzlDataSet1.SUROWCE" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int64"/&gt;
+      &lt;Column Name="id_surowca" DataType="System.Int32"/&gt;
+      &lt;Column Name="tw" DataType="System.Int32"/&gt;
+      &lt;Column Name="khid" DataType="System.Int64"/&gt;
+      &lt;Column Name="khnazwa" DataType="System.String"/&gt;
+      &lt;Column Name="khkod" DataType="System.String"/&gt;
+      &lt;Column Name="khadres" DataType="System.String"/&gt;
+      &lt;Column Name="khdom" DataType="System.String"/&gt;
+      &lt;Column Name="khlokal" DataType="System.String"/&gt;
+      &lt;Column Name="khmiasto" DataType="System.String"/&gt;
+      &lt;Column Name="khkodpocz" DataType="System.String"/&gt;
+      &lt;Column Name="khnip" DataType="System.String"/&gt;
+      &lt;Column Name="khkraj" DataType="System.String"/&gt;
+      &lt;Column Name="numer_tel" DataType="System.String"/&gt;
+      &lt;Column Name="ilosc_surowca" DataType="System.Double"/&gt;
+      &lt;Column Name="nazwa_surowca" DataType="System.String"/&gt;
+      &lt;Column Name="id_tw" DataType="System.Int64"/&gt;
+      &lt;Column Name="kod_tw" DataType="System.String"/&gt;
+      &lt;Column Name="pestycydy" DataType="System.String"/&gt;
+      &lt;Column Name="pestycydy_data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="uwagi" DataType="System.String"/&gt;
+      &lt;Column Name="osoba" DataType="System.String"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="modyfikacja" DataType="System.DateTime"/&gt;
+      &lt;Column Name="modyfikowal" DataType="System.String"/&gt;
+      &lt;Column Name="status" DataType="System.Byte"/&gt;
+      &lt;Column Name="realizacja" DataType="System.Byte"/&gt;
+      &lt;Column Name="realizacja_ilosc" DataType="System.Double"/&gt;
+      &lt;Column Name="data_realizacji" DataType="System.DateTime"/&gt;
+      &lt;Column Name="rok_plantacji" DataType="System.String"/&gt;
+      &lt;Column Name="pokos" DataType="System.Byte"/&gt;
+      &lt;Column Name="nr_partii" DataType="System.String"/&gt;
+      &lt;Column Name="zbor_data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="pa_ilosc" DataType="System.Double"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="SUROWCE_TW" ReferenceName="fzlDataSet1.SUROWCE_TW" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod_tw" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa_tw" DataType="System.String"/&gt;
+      &lt;Column Name="idtw" DataType="System.Int64"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="TW" ReferenceName="fzlDataSet1.TW" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="osoba" DataType="System.String"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="kodpaskowy" DataType="System.String"/&gt;
+      &lt;Column Name="vatsid" DataType="System.Byte"/&gt;
+      &lt;Column Name="jm" DataType="System.String"/&gt;
+      &lt;Column Name="typ" DataType="System.Byte"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="REPORT_PRODMGDW" ReferenceName="fzlDataSet1.REPORT_PRODMGDW" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="typ_produktu" DataType="System.String"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="nr_partii" DataType="System.String"/&gt;
+      &lt;Column Name="data" DataType="System.String"/&gt;
+      &lt;Column Name="khnazwa" DataType="System.String"/&gt;
+      &lt;Column Name="kodtw" DataType="System.String"/&gt;
+      &lt;Column Name="iloscpz" DataType="System.String"/&gt;
+      &lt;Column Name="stan" DataType="System.String"/&gt;
+      &lt;Column Name="iloscprod" DataType="System.String"/&gt;
+      &lt;Column Name="iloscdost" DataType="System.String"/&gt;
+      &lt;Column Name="frakcja" DataType="System.String"/&gt;
+      &lt;Column Name="opis" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="MAGAZYNY" ReferenceName="fzlDataSet1.MAGAZYNY" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="adres" DataType="System.String"/&gt;
+      &lt;Column Name="nr" DataType="System.String"/&gt;
+      &lt;Column Name="miejscowosc" DataType="System.String"/&gt;
+      &lt;Column Name="kodpocztowy" DataType="System.String"/&gt;
+      &lt;Column Name="opis" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="WZ_SPECYFIKACJE" ReferenceName="fzlDataSet1.WZ_SPECYFIKACJE" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_dk" DataType="System.Int32"/&gt;
+      &lt;Column Name="kod_dk" DataType="System.String"/&gt;
+      &lt;Column Name="osoba" DataType="System.String"/&gt;
+      &lt;Column Name="kod" DataType="System.String"/&gt;
+      &lt;Column Name="seria" DataType="System.String"/&gt;
+      &lt;Column Name="serianr" DataType="System.Int32"/&gt;
+      &lt;Column Name="nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="datasp" DataType="System.DateTime"/&gt;
+      &lt;Column Name="opis" DataType="System.String"/&gt;
+      &lt;Column Name="khid" DataType="System.Int32"/&gt;
+      &lt;Column Name="khkod" DataType="System.String"/&gt;
+      &lt;Column Name="khnazwa" DataType="System.String"/&gt;
+      &lt;Column Name="khadres" DataType="System.String"/&gt;
+      &lt;Column Name="khdom" DataType="System.String"/&gt;
+      &lt;Column Name="khlokal" DataType="System.String"/&gt;
+      &lt;Column Name="khmiasto" DataType="System.String"/&gt;
+      &lt;Column Name="khnip" DataType="System.String"/&gt;
+      &lt;Column Name="khkraj" DataType="System.String"/&gt;
+      &lt;Column Name="odid" DataType="System.Int32"/&gt;
+      &lt;Column Name="odkod" DataType="System.String"/&gt;
+      &lt;Column Name="odnazwa" DataType="System.String"/&gt;
+      &lt;Column Name="odadres" DataType="System.String"/&gt;
+      &lt;Column Name="oddom" DataType="System.String"/&gt;
+      &lt;Column Name="odlokal" DataType="System.String"/&gt;
+      &lt;Column Name="odmiasto" DataType="System.String"/&gt;
+      &lt;Column Name="odkodpocz" DataType="System.String"/&gt;
+      &lt;Column Name="odkraj" DataType="System.String"/&gt;
+      &lt;Column Name="odnip" DataType="System.String"/&gt;
+      &lt;Column Name="aktualizacja" DataType="System.DateTime"/&gt;
+      &lt;Column Name="jm" DataType="System.String"/&gt;
+      &lt;Column Name="wnetto" DataType="System.Single"/&gt;
+      &lt;Column Name="wbrutto" DataType="System.Single"/&gt;
+      &lt;Column Name="khkodpocz" DataType="System.String"/&gt;
+      &lt;Column Name="kod_firmy" DataType="System.String"/&gt;
+      &lt;Column Name="samochod" DataType="System.String"/&gt;
+      &lt;Column Name="warunki_dostawy" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="WZ_SPECYFIKACJE_OPAKOWANIA" ReferenceName="fzlDataSet1.WZ_SPECYFIKACJE_OPAKOWANIA" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="lp" DataType="System.Byte"/&gt;
+      &lt;Column Name="id_specwz" DataType="System.Int32"/&gt;
+      &lt;Column Name="id_wztow" DataType="System.Int32"/&gt;
+      &lt;Column Name="kodtw" DataType="System.String"/&gt;
+      &lt;Column Name="idtw" DataType="System.Int32"/&gt;
+      &lt;Column Name="ilosc" DataType="System.Double"/&gt;
+      &lt;Column Name="ilewopakowaniu" DataType="System.Double"/&gt;
+      &lt;Column Name="data" DataType="System.DateTime"/&gt;
+      &lt;Column Name="godzina" DataType="System.String"/&gt;
+      &lt;Column Name="id_opakowania" DataType="System.Int32"/&gt;
+      &lt;Column Name="opakowanie_nazwa" DataType="System.String"/&gt;
+      &lt;Column Name="ilosc_opakowania" DataType="System.Double"/&gt;
+      &lt;Column Name="waga_opakowania" DataType="System.Double"/&gt;
+      &lt;Column Name="oznaczenie" DataType="System.String"/&gt;
+      &lt;Column Name="termin_przydatnosci" DataType="System.DateTime"/&gt;
+      &lt;Column Name="uwagi" DataType="System.String"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;TableDataSource Name="WZ_SPECYFIKACJE_TOWARY" ReferenceName="fzlDataSet1.WZ_SPECYFIKACJE_TOWARY" DataType="System.Int32" Enabled="true"&gt;
+      &lt;Column Name="id" DataType="System.Int32"/&gt;
+      &lt;Column Name="lp" DataType="System.Byte"/&gt;
+      &lt;Column Name="id_wzspec" DataType="System.Int32"/&gt;
+      &lt;Column Name="idtw" DataType="System.Int32"/&gt;
+      &lt;Column Name="kodtw" DataType="System.String"/&gt;
+      &lt;Column Name="nazwatw" DataType="System.String"/&gt;
+      &lt;Column Name="nazwatw2" DataType="System.String"/&gt;
+      &lt;Column Name="nr_partii" DataType="System.String"/&gt;
+      &lt;Column Name="po" DataType="System.String"/&gt;
+      &lt;Column Name="kontrakt" DataType="System.String"/&gt;
+      &lt;Column Name="pos" DataType="System.String"/&gt;
+      &lt;Column Name="vendor" DataType="System.String"/&gt;
+      &lt;Column Name="mat" DataType="System.String"/&gt;
+      &lt;Column Name="zew_nrpartii" DataType="System.String"/&gt;
+      &lt;Column Name="data_1" DataType="System.DateTime"/&gt;
+      &lt;Column Name="data_2" DataType="System.DateTime"/&gt;
+      &lt;Column Name="data_3" DataType="System.DateTime"/&gt;
+    &lt;/TableDataSource&gt;
+    &lt;Relation Name="FK_GS1_KODY_PRODDP_MONIT" ReferenceName="fzlDataSet1.FK_GS1_KODY_PRODDP_MONIT" ParentDataSource="PRODDP_MONIT" ChildDataSource="GS1_KODY" ParentColumns="id" ChildColumns="id_prod_dp_monit" Enabled="true"/&gt;
+    &lt;Relation Name="FK_HMMZ_HMMG" ReferenceName="fzlDataSet1.FK_HMMZ_HMMG" ParentDataSource="HMMG" ChildDataSource="HMMZ" ParentColumns="id" ChildColumns="id_hmmg" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PLACE_PRACOWNICY_PLACE" ReferenceName="fzlDataSet1.FK_PLACE_PRACOWNICY_PLACE" ParentDataSource="PLACE" ChildDataSource="PLACE_PRACOWNICY" ParentColumns="id" ChildColumns="id_listy" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PLACE_PRACOWNICY_PRACOWNICY" ReferenceName="fzlDataSet1.FK_PLACE_PRACOWNICY_PRACOWNICY" ParentDataSource="PRACOWNICY" ChildDataSource="PLACE_PRACOWNICY" ParentColumns="id" ChildColumns="id_pracownika" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_LINIE_MASZYNY_PROD_LINIE" ReferenceName="fzlDataSet1.FK_PROD_LINIE_MASZYNY_PROD_LINIE" ParentDataSource="PROD_LINIE" ChildDataSource="PROD_LINIE_MASZYNY" ParentColumns="id" ChildColumns="id_lini" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_LINIE_MASZYNY_PROD_MASZYNY" ReferenceName="fzlDataSet1.FK_PROD_LINIE_MASZYNY_PROD_MASZYNY" ParentDataSource="PROD_MASZYNY" ChildDataSource="PROD_LINIE_MASZYNY" ParentColumns="id" ChildColumns="id_maszyny" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_LINIE_PARAM_PROD_LINIE" ReferenceName="fzlDataSet1.FK_PROD_LINIE_PARAM_PROD_LINIE" ParentDataSource="PROD_LINIE" ChildDataSource="PROD_LINIE_PARAM" ParentColumns="id" ChildColumns="id_lini" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_LINIE_PARAM_WART_PROD" ReferenceName="fzlDataSet1.FK_PROD_LINIE_PARAM_WART_PROD" ParentDataSource="PROD" ChildDataSource="PROD_LINIE_PARAM_WART" ParentColumns="id" ChildColumns="id_prod" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_LINIE_PARAM_WART_PROD_LINIE_PARAM" ReferenceName="fzlDataSet1.FK_PROD_LINIE_PARAM_WART_PROD_LINIE_PARAM" ParentDataSource="PROD_LINIE_PARAM" ChildDataSource="PROD_LINIE_PARAM_WART" ParentColumns="id" ChildColumns="id_param" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_LINIE_PW_PROD" ReferenceName="fzlDataSet1.FK_PROD_LINIE_PW_PROD" ParentDataSource="PROD" ChildDataSource="PROD_LINIE_PW" ParentColumns="id" ChildColumns="id_prod" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_LINIE_PW_PROD_LINIE" ReferenceName="fzlDataSet1.FK_PROD_LINIE_PW_PROD_LINIE" ParentDataSource="PROD_LINIE" ChildDataSource="PROD_LINIE_PW" ParentColumns="id" ChildColumns="id_lini" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_MASZYNY_MONIT_PROD" ReferenceName="fzlDataSet1.FK_PROD_MASZYNY_MONIT_PROD" ParentDataSource="PROD" ChildDataSource="PROD_MASZYNY_MONIT" ParentColumns="id" ChildColumns="id_prod" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_MASZYNY_MONIT_PROD_MASZYNY_PW" ReferenceName="fzlDataSet1.FK_PROD_MASZYNY_MONIT_PROD_MASZYNY_PW" ParentDataSource="PROD_MASZYNY_PW" ChildDataSource="PROD_MASZYNY_MONIT" ParentColumns="id" ChildColumns="id_prod_maszyny_pw" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_MASZYNY_PARAM_PROD_MASZYNY_PARAM" ReferenceName="fzlDataSet1.FK_PROD_MASZYNY_PARAM_PROD_MASZYNY_PARAM" ParentDataSource="PROD_MASZYNY" ChildDataSource="PROD_MASZYNY_PARAM" ParentColumns="id" ChildColumns="id_maszyny" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_MASZYNY_PARAM_DEF_PROD_MASZYNY_PARAM" ReferenceName="fzlDataSet1.FK_PROD_MASZYNY_PARAM_DEF_PROD_MASZYNY_PARAM" ParentDataSource="PROD_MASZYNY_PARAM" ChildDataSource="PROD_MASZYNY_PARAM_DEF" ParentColumns="id" ChildColumns="id_param" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_MASZYNY_PARAM_WART_PROD" ReferenceName="fzlDataSet1.FK_PROD_MASZYNY_PARAM_WART_PROD" ParentDataSource="PROD" ChildDataSource="PROD_MASZYNY_PARAM_WART" ParentColumns="id" ChildColumns="id_prod" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_MASZYNY_PARAM_WART_PROD_MASZYNY_PARAM" ReferenceName="fzlDataSet1.FK_PROD_MASZYNY_PARAM_WART_PROD_MASZYNY_PARAM" ParentDataSource="PROD_MASZYNY_PARAM" ChildDataSource="PROD_MASZYNY_PARAM_WART" ParentColumns="id" ChildColumns="id_param" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_MASZYNY_PARAM_WART_PROD_MASZYNY_PW" ReferenceName="fzlDataSet1.FK_PROD_MASZYNY_PARAM_WART_PROD_MASZYNY_PW" ParentDataSource="PROD_MASZYNY_PW" ChildDataSource="PROD_MASZYNY_PARAM_WART" ParentColumns="id" ChildColumns="id_prod_maszyny_pw" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_MASZYNY_PW_PROD" ReferenceName="fzlDataSet1.FK_PROD_MASZYNY_PW_PROD" ParentDataSource="PROD" ChildDataSource="PROD_MASZYNY_PW" ParentColumns="id" ChildColumns="id_prod" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_MASZYNY_PW_PROD_MASZYNY" ReferenceName="fzlDataSet1.FK_PROD_MASZYNY_PW_PROD_MASZYNY" ParentDataSource="PROD_MASZYNY" ChildDataSource="PROD_MASZYNY_PW" ParentColumns="id" ChildColumns="id_maszyny" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_PW_PROD" ReferenceName="fzlDataSet1.FK_PROD_PW_PROD" ParentDataSource="PROD" ChildDataSource="PROD_PW" ParentColumns="id" ChildColumns="id_prod" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_PW_PROD_HMDW" ReferenceName="fzlDataSet1.FK_PROD_PW_PROD_HMDW" ParentDataSource="PROD_HMDW" ChildDataSource="PROD_PW" ParentColumns="id" ChildColumns="id_proddw" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_PW_PRODDP" ReferenceName="fzlDataSet1.FK_PROD_PW_PRODDP" ParentDataSource="PRODDP" ChildDataSource="PROD_PW" ParentColumns="id" ChildColumns="id_proddp" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_ZL_PROD" ReferenceName="fzlDataSet1.FK_PROD_ZL_PROD" ParentDataSource="PROD" ChildDataSource="PROD_ZL" ParentColumns="id" ChildColumns="id1" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PROD_ZL_PROD1" ReferenceName="fzlDataSet1.FK_PROD_ZL_PROD1" ParentDataSource="PROD" ChildDataSource="PROD_ZL" ParentColumns="id" ChildColumns="id2" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PRODDK_PROD" ReferenceName="fzlDataSet1.FK_PRODDK_PROD" ParentDataSource="PROD" ChildDataSource="PRODDK" ParentColumns="id" ChildColumns="id_prod" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PRODDP_PROD_HMDW" ReferenceName="fzlDataSet1.FK_PRODDP_PROD_HMDW" ParentDataSource="PROD_HMDW" ChildDataSource="PRODDP" ParentColumns="id" ChildColumns="idproddw" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PRODDP_PRODDK" ReferenceName="fzlDataSet1.FK_PRODDP_PRODDK" ParentDataSource="PRODDK" ChildDataSource="PRODDP" ParentColumns="id" ChildColumns="id_proddk" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PRODDP_MONIT_PRODDP" ReferenceName="fzlDataSet1.FK_PRODDP_MONIT_PRODDP" ParentDataSource="PRODDP" ChildDataSource="PRODDP_MONIT" ParentColumns="id" ChildColumns="id_proddp" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PRODPARAM_WART_PROD" ReferenceName="fzlDataSet1.FK_PRODPARAM_WART_PROD" ParentDataSource="PROD" ChildDataSource="PRODPARAM_WART" ParentColumns="id" ChildColumns="id_prod" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PRODPARAM_WART_PRODPARAM" ReferenceName="fzlDataSet1.FK_PRODPARAM_WART_PRODPARAM" ParentDataSource="PRODPARAM" ChildDataSource="PRODPARAM_WART" ParentColumns="id" ChildColumns="id_param" Enabled="true"/&gt;
+    &lt;Relation Name="FK_SUROWCE_KH" ReferenceName="fzlDataSet1.FK_SUROWCE_KH" ParentDataSource="KH" ChildDataSource="SUROWCE" ParentColumns="id" ChildColumns="khid" Enabled="true"/&gt;
+    &lt;Relation Name="FK_SUROWCE_SUROWCE_TW" ReferenceName="fzlDataSet1.FK_SUROWCE_SUROWCE_TW" ParentDataSource="SUROWCE_TW" ChildDataSource="SUROWCE" ParentColumns="id" ChildColumns="id_surowca" Enabled="true"/&gt;
+    &lt;Relation Name="FK_SUROWCE_TW" ReferenceName="fzlDataSet1.FK_SUROWCE_TW" ParentDataSource="TW" ChildDataSource="SUROWCE" ParentColumns="id" ChildColumns="tw" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PRODDP_MONIT_MAGAZYNY" ReferenceName="fzlDataSet1.FK_PRODDP_MONIT_MAGAZYNY" ParentDataSource="MAGAZYNY" ChildDataSource="PRODDP_MONIT" ParentColumns="id" ChildColumns="id_miejsca_skladowania" Enabled="true"/&gt;
+    &lt;Relation Name="FK_PRODDP_MONIT_PROD_HMTW" ReferenceName="fzlDataSet1.FK_PRODDP_MONIT_PROD_HMTW" ParentDataSource="PROD_HMTW" ChildDataSource="PRODDP_MONIT" ParentColumns="id" ChildColumns="id_opakowania" Enabled="true"/&gt;
+    &lt;Relation Name="FK_WZ_SPECYFIKACJE_OPAKOWANIA_WZ_SPECYFIKACJE_TOWARY" ReferenceName="fzlDataSet1.FK_WZ_SPECYFIKACJE_OPAKOWANIA_WZ_SPECYFIKACJE_TOWARY" ParentDataSource="WZ_SPECYFIKACJE_TOWARY" ChildDataSource="WZ_SPECYFIKACJE_OPAKOWANIA" ParentColumns="id" ChildColumns="id_wztow" Enabled="true"/&gt;
+    &lt;Relation Name="FK_WZ_SPECYFIKACJE_TOWARY_WZ_SPECYFIKACJE" ReferenceName="fzlDataSet1.FK_WZ_SPECYFIKACJE_TOWARY_WZ_SPECYFIKACJE" ParentDataSource="WZ_SPECYFIKACJE" ChildDataSource="WZ_SPECYFIKACJE_TOWARY" ParentColumns="id" ChildColumns="id_wzspec" Enabled="true"/&gt;
+  &lt;/Dictionary&gt;
+  &lt;ReportPage Name="Page1"&gt;
+    &lt;ReportTitleBand Name="ReportTitle1" Width="718.2" Height="94.5"&gt;
+      &lt;PictureObject Name="Picture1" Left="-9.45" Top="-28.35" Width="141.75" Height="122.85" Image="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"/&gt;
+      &lt;RichObject Name="Rich1" Left="141.75" Width="170.1" Height="94.5" Text="{\rtf1\ansi\ansicpg1250\deff0\nouicompat\deflang1045{\fonttbl{\f0\fswiss\fprq2\fcharset238 Calibri;}{\f1\fnil\fcharset238 Tahoma;}}&amp;#13;&amp;#10;{\colortbl ;\red0\green128\blue0;}&amp;#13;&amp;#10;{\*\generator Riched20 10.0.19041}\viewkind4\uc1 &amp;#13;&amp;#10;\pard\widctlpar\sa160\sl252\slmult1\cf1\f0\fs18 FZL SP. Z O.O.\line Kruszynek 10\line 87-853 Kruszyn, POLAND \par&amp;#13;&amp;#10;&amp;#13;&amp;#10;\pard\lang1033 Tel. +48 54 2528418\line Fax +48 54 2528467\line\cf0\f1\fs17\lang1045\par&amp;#13;&amp;#10;}&amp;#13;&amp;#10;"/&gt;
+      &lt;TextObject Name="Text1" Left="396.9" Width="217.35" Height="28.35" Text="PACKING LIST no." HorzAlign="Right" VertAlign="Bottom" Font="Arial, 16pt, style=Bold"/&gt;
+      &lt;TextObject Name="Text2" Left="614.25" Top="9.45" Width="103.95" Height="18.9" Text="[WZ_SPECYFIKACJE.kod]"/&gt;
+      &lt;TextObject Name="Text3" Left="453.6" Top="28.35" Width="160.65" Height="18.9" Text="Date and place of issue: " HorzAlign="Right"/&gt;
+      &lt;TextObject Name="Text4" Left="614.25" Top="28.35" Width="103.95" Height="18.9" Text="[WZ_SPECYFIKACJE.data]" Format="Date" Format.Format="d"/&gt;
+      &lt;TextObject Name="Text5" Left="453.6" Top="47.25" Width="311.85" Height="18.9" Text="(List przewozowy nr, data i miejsce wystawienia:)" Font="Arial, 8pt"/&gt;
+    &lt;/ReportTitleBand&gt;
+    &lt;PageHeaderBand Name="PageHeader1" Top="96.72" Width="718.2" Height="37.8"/&gt;
+    &lt;DataBand Name="Data1" Top="136.74" Width="718.2" Height="151.2" DataSource="WZ_SPECYFIKACJE" MaxRows="1"&gt;
+      &lt;TextObject Name="Text6" Width="359.1" Height="18.9" Border.Lines="All" Fill.Color="Gainsboro" Text="Seller (Loading place)/ Dostawca (Miejsce załadniku):" Font="Arial, 10pt, style=Bold"/&gt;
+      &lt;TextObject Name="Text7" Top="18.9" Width="359.1" Height="56.7" Border.Lines="All" Text="[FIRMA.nazwa_pelna]&amp;#13;&amp;#10;[FIRMA.ulica] [FIRMA.numer_dom]" VertAlign="Center"/&gt;
+      &lt;TextObject Name="Text9" Left="359.1" Top="18.9" Width="359.1" Height="56.7" Border.Lines="All" Text="[WZ_SPECYFIKACJE.khnazwa]&amp;#13;&amp;#10;[WZ_SPECYFIKACJE.khadres] [WZ_SPECYFIKACJE.khdom] [WZ_SPECYFIKACJE.khlokal]&amp;#13;&amp;#10;[WZ_SPECYFIKACJE.khkodpocz] [WZ_SPECYFIKACJE.khmiasto]&amp;#13;&amp;#10;" VertAlign="Center"/&gt;
+      &lt;TextObject Name="Text8" Left="359.1" Width="359.1" Height="18.9" Border.Lines="All" Fill.Color="Gainsboro" Text="Buyer/ Kupujący:" Font="Arial, 10pt, style=Bold"/&gt;
+      &lt;TextObject Name="Text10" Top="75.6" Width="359.1" Height="18.9" Border.Lines="All" Fill.Color="Gainsboro" Text="Additional information/ Dodatkowe Informacje:" Font="Arial, 10pt, style=Bold"/&gt;
+      &lt;TextObject Name="Text11" Top="94.5" Width="359.1" Height="56.7" Border.Lines="All" Text="Vehicle ID/Nr id. Środka transportu:  [WZ_SPECYFIKACJE.samochod]&amp;#13;&amp;#10;Incoterms/Warunki dostawy:   [WZ_SPECYFIKACJE.warunki_dostawy]" VertAlign="Center"/&gt;
+      &lt;TextObject Name="Text12" Left="359.1" Top="94.5" Width="359.1" Height="56.7" Border.Lines="All" Text="[WZ_SPECYFIKACJE.odnazwa]&amp;#13;&amp;#10;[WZ_SPECYFIKACJE.odadres] [WZ_SPECYFIKACJE.oddom] [WZ_SPECYFIKACJE.odlokal]&amp;#13;&amp;#10;[WZ_SPECYFIKACJE.odkodpocz] [WZ_SPECYFIKACJE.odmiasto]&amp;#13;&amp;#10;[WZ_SPECYFIKACJE.odkraj]&amp;#13;&amp;#10;[WZ_SPECYFIKACJE.odnip]&amp;#13;&amp;#10;" VertAlign="Center"/&gt;
+      &lt;TextObject Name="Text13" Left="359.1" Top="75.6" Width="359.1" Height="18.9" Border.Lines="All" Fill.Color="Gainsboro" Text="Ship to/ Dostawa do:" Font="Arial, 10pt, style=Bold"/&gt;
+    &lt;/DataBand&gt;
+    &lt;DataBand Name="Data2" Top="339.64" Width="718.2" DataSource="WZ_SPECYFIKACJE_TOWARY" Filter="[WZ_SPECYFIKACJE_TOWARY.id_wzspec]==[WZ_SPECYFIKACJE.id]"&gt;
+      &lt;DataHeaderBand Name="DataHeader1" Top="290.17" Width="718.2" Height="47.25" CanGrow="true"&gt;
+        &lt;TextObject Name="Text14" Left="359.1" Width="132.3" Height="47.25" Border.Lines="All" Fill.Color="LightGray" CanGrow="true" Text="Packing method&amp;#13;&amp;#10;(Sposób pakowania)&amp;#13;&amp;#10;" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/&gt;
+        &lt;TextObject Name="Text17" Left="491.4" Width="226.8" Height="18.9" Border.Lines="All" Fill.Color="LightGray" Text="Quantity kg (ilość kg)" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 8pt"/&gt;
+        &lt;TextObject Name="Text18" Left="491.4" Top="18.9" Width="113.4" Height="28.35" Border.Lines="All" Fill.Color="LightGray" CanGrow="true" Text="net weight&amp;#13;&amp;#10;(netto)" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/&gt;
+        &lt;TextObject Name="Text19" Left="604.8" Top="18.9" Width="113.4" Height="28.35" Border.Lines="All" Fill.Color="LightGray" CanGrow="true" Text="gross weight &amp;#13;&amp;#10;(brutto)" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/&gt;
+        &lt;TextObject Name="Text15" Left="28.35" Width="330.75" Height="47.25" Border.Lines="All" Fill.Color="LightGray" Text="Product description&amp;#13;&amp;#10;(Opis towaru)" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/&gt;
+        &lt;TextObject Name="Text22" Width="28.35" Height="47.25" Border.Lines="All" Fill.Color="LightGray" Text="Lp." HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/&gt;
+      &lt;/DataHeaderBand&gt;
+      &lt;DataBand Name="Data3" Top="341.86" Width="718.2" Height="37.8" DataSource="WZ_SPECYFIKACJE_OPAKOWANIA"&gt;
+        &lt;RichObject Name="Rich2" Left="359.1" Width="132.3" Height="37.8" Border.Lines="All" Text="{\rtf1\ansi\ansicpg1250\deff0\nouicompat\deflang1045{\fonttbl{\f0\fnil\fcharset238 Arial;}{\f1\fnil\fcharset238 Tahoma;}}&amp;#13;&amp;#10;{\*\generator Riched20 10.0.19041}\viewkind4\uc1 &amp;#13;&amp;#10;\pard\qc\b\f0\fs20 [WZ_SPECYFIKACJE_OPAKOWANIA.opakowanie_nazwa]\b0\par&amp;#13;&amp;#10;[WZ_SPECYFIKACJE_OPAKOWANIA.ilosc] x [WZ_SPECYFIKACJE_OPAKOWANIA.ilewopakowaniu] kg\f1\fs17\par&amp;#13;&amp;#10;}&amp;#13;&amp;#10;"/&gt;
+        &lt;TextObject Name="Text20" Left="491.4" Width="113.4" Height="37.8" Border.Lines="All" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 8pt, style=Bold"/&gt;
+        &lt;TextObject Name="Text21" Left="604.8" Width="113.4" Height="37.8" Border.Lines="All" HorzAlign="Center" VertAlign="Bottom" Font="Arial, 8pt, style=Bold"/&gt;
+        &lt;RichObject Name="Rich3" Left="28.35" Width="330.75" Height="37.8" Border.Lines="All" PrintOn="FirstPage, LastPage, OddPages, EvenPages, SinglePage" Text="{\rtf1\ansi\ansicpg1250\deff0\nouicompat\deflang1045{\fonttbl{\f0\fnil\fcharset238 Arial;}{\f1\fnil\fcharset238 Tahoma;}}&amp;#13;&amp;#10;{\*\generator Riched20 10.0.19041}\viewkind4\uc1 &amp;#13;&amp;#10;\pard\qc\f0\fs20 [WZ_SPECYFIKACJE_TOWARY.nazwatw]\par&amp;#13;&amp;#10;[WZ_SPECYFIKACJE_TOWARY.nazwatw2]\par&amp;#13;&amp;#10;[WZ_SPECYFIKACJE_TOWARY.nr_partii]\f1\fs17\par&amp;#13;&amp;#10;}&amp;#13;&amp;#10;"/&gt;
+        &lt;TextObject Name="Text23" Width="28.35" Height="37.8" Border.Lines="All" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/&gt;
+      &lt;/DataBand&gt;
+      &lt;DataFooterBand Name="DataFooter1" Top="381.88" Width="718.2" Height="37.8"&gt;
+        &lt;TextObject Name="Text16" Width="359.1" Height="28.35" Border.Lines="All" Text="TOTAL" HorzAlign="Center" VertAlign="Center" Font="Arial, 14pt, style=Bold"/&gt;
+        &lt;TextObject Name="Text24" Left="359.1" Width="132.3" Height="28.35" Border.Lines="All" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/&gt;
+        &lt;TextObject Name="Text25" Left="491.4" Width="113.4" Height="28.35" Border.Lines="All" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/&gt;
+        &lt;TextObject Name="Text26" Left="604.8" Width="113.4" Height="28.35" Border.Lines="All" HorzAlign="Center" VertAlign="Center" Font="Arial, 8pt"/&gt;
+      &lt;/DataFooterBand&gt;
+    &lt;/DataBand&gt;
+    &lt;PageFooterBand Name="PageFooter1" Top="421.91" Width="718.2" Height="18.9"/&gt;
+  &lt;/ReportPage&gt;
+&lt;/Report&gt;
+</value>
+  </data>
+  <metadata name="fzlDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>109, 17</value>
+  </metadata>
+</root>

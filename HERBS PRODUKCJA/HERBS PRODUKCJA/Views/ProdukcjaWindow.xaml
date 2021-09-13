@@ -1,0 +1,9 @@
+﻿<Window x:Class="HERBS_PRODUKCJA.Views.ProdukcjaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ProdukcjaWindow" Height="300" Width="643">
+    <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="180,127,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>
